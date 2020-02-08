@@ -1,7 +1,52 @@
-# mytotal
+
+- [收藏总结](#收藏总结)
+    - [算法及数据结构](#算法及数据结构)
+    - [操作系统](#操作系统)
+        - [Linux](#linux)
+        - [Android](#android)
+    - [设计模式](#设计模式)
+    - [编程语言](#编程语言)
+    - [嵌入式开发及ＤＮＮ加速](#嵌入式开发及ｄｎｎ加速)
+    - [前端及UI设计](#前端及ui设计)
+    - [程序打包及安装](#程序打包及安装)
+    - [测试](#测试)
+    - [深度学习及机器视觉](#深度学习及机器视觉)
+        - [机器学习](#机器学习)
+        - [CNN](#cnn)
+        - [目标检测](#目标检测)
+        - [目标跟踪](#目标跟踪)
+        - [神经网络量化](#神经网络量化)
+        - [开发框架](#开发框架)
+        - [数据集](#数据集)
+            - [车牌数据集](#车牌数据集)
+    - [分布式开发](#分布式开发)
+        - [WEB 服务器相关](#web-服务器相关)
+        - [数据库](#数据库)
+        - [高性能高并发](#高性能高并发)
+        - [分布式原理](#分布式原理)
+        - [工程化方法](#工程化方法)
+    - [大数据处理](#大数据处理)
+        - [数据存储](#数据存储)
+        - [数据分析](#数据分析)
+        - [容器及虚拟化技术](#容器及虚拟化技术)
+        - [微服务架构](#微服务架构)
+        - [分布式实时计算](#分布式实时计算)
+        - [离线批处理](#离线批处理)
+        - [消息中间件](#消息中间件)
+        - [综合解决方案](#综合解决方案)
+    - [金融期货](#金融期货)
+    - [电动汽车](#电动汽车)
+    - [地图及GPS](#地图及gps)
+    - [综合及学习](#综合及学习)
+    - 
+# 收藏总结
 
 ## 算法及数据结构
 1. [单轴快排（SinglePivotQuickSort）和双轴快排（DualPivotQuickSort）及其JAVA实现](https://blog.csdn.net/Holmofy/article/details/71168530)
+2. 数据结构总结
+![数据结构](images/数据结构.png)
+3. 算法总结
+![算法总结](images/算法.png)
 
 ## 操作系统
 ### Linux
@@ -41,54 +86,22 @@
 6. [PHP 高级编程之多线程](https://www.oschina.net/question/725072_155472)
 7. [深入理解ＰＨＰ内核](http://www.php-internals.com/book/)
 8. [AutoIt 在线文档](http://www.autoitx.com/Doc/)
-9. [Ｃ语言标准库](https://www.yiibai.com/c_standard_library/math_h.html)
-10. [Ｃ＋＋　MIME邮件库](https://www.vmime.org/)
-11. [C++函数指针模板](https://www.cnblogs.com/xianyunhe/archive/2011/11/27/2265148.html)
-12. [C++调用JAVA方法详解](https://www.iteye.com/blog/public0821-423941)
-13. [Google 开源项目Ｃ＋＋风格指南](https://zh-google-styleguide.readthedocs.io/en/latest/google-cpp-styleguide/contents/)
-14. [标准轻量的Ｃ库实现Klib，包括常见的数据结构实现](https://github.com/attractivechaos/klib)
-15. [类Ｇlib C库 tbox](https://github.com/tboox/tbox)
-16. [Doxygen的注释风格](https://my.oschina.net/zhfish/blog/35422)
-17. [java 中的锁 -- 偏向锁、轻量级锁、自旋锁、重量级锁](https://blog.csdn.net/zqz_zqz/article/details/70233767/)
-18. [Java Core Sprout](https://crossoverjie.top/JCSprout/#/)
-19. [JAVA 并发编程网](https://ifeve.com/)
-20. [Java 并行编程](http://tutorials.jenkov.com/java-concurrency/costs.html)
-21. [Java 并行编程工具类详解](http://tutorials.jenkov.com/java-util-concurrent/index.html)
-
-## 分布式开发
-
-### WEB 服务器相关
-1. [Nginx 中文文档](http://www.nginx.cn/doc/)
-2. [Squid中文权威指南](https://www.phpfans.net/manu/Squid/)
-3. [HTTP 代理原理及实现](https://imququ.com/post/web-proxy.html)
-4. [Nginx 正向代理配置](https://blog.csdn.net/u012796139/article/details/50067951)
-5. [Nginx开发从入门到精通](http://tengine.taobao.org/book/index.html)
-
-### 数据库
-1. [Redis面试题及分布式集群](https://blog.csdn.net/yajlv/article/details/73467865)
-2. [Mysql 5.6主从同步配置与解决方案](https://www.cnblogs.com/kezf/p/mysql-slave.html)
-3. [ORMlite 对象映射](http://ormlite.com/javadoc/ormlite-core/doc-files/ormlite_2.html#Using)
-4. [搭建高可用负载均衡的Mysql集群](https://www.cnblogs.com/phpstudy2015-6/p/6706465.html)
-
-### 高性能高并发
-1. [高性能、高并发、高扩展性和可读性的网络服务器架构：StateThreads](https://blog.csdn.net/win_lin/article/details/8242653)
-2. [微服务架构体系的深度治理](https://www.infoq.cn/article/q65dDiRTdSbF*E6Ki2P4)
-3. [Poll性能比较分析](http://lse.sourceforge.net/epoll/index.html)
-4. [高性能 TCP 堆栈 mTCP](https://www.oschina.net/p/mtcp)
-5. [C/C++ 服务端及网络开发组件ACL](https://github.com/acl-dev/acl)
-
-### 分布式原理
-1. [事务补偿机制](https://www.iteye.com/blog/zhaoshijie-2148089)
-2. [分布式事务——消息最终一致性方案](https://www.jianshu.com/p/04bad986a4a2)
-3. [Paxos算法原理与推导](https://www.cnblogs.com/linbingdong/p/6253479.html)
-4. [分布式系统Paxos算法](https://www.jdon.com/artichect/paxos.html)
-5. [Zookeeper 配置和原理探究](https://www.cnblogs.com/balfish/p/4864588.html)
-6. [分布式事务，两阶段提交协议，三阶段提交协议](https://www.cnblogs.com/balfish/p/8658691.html)
-7. [分布式事务除两阶段提交外的其他解决方案](https://blog.csdn.net/hxpjava1/article/details/79409395)
-
-### 工程化方法
-1. [分布式系统的工程化开发方法](https://blog.csdn.net/solstice/article/details/5950190)
-2. [基于消息的分布式架构](https://www.infoq.cn/article/message-based-distributed-architecture/)
+9. [ECMAScript 6 入门](http://es6.ruanyifeng.com/#docs/set-map)
+6. [JS实现继承的几种方式](https://www.cnblogs.com/humin/p/4556820.html)
+7. [JS中的prototype](https://www.cnblogs.com/yjf512/archive/2011/06/03/2071914.html)
+10. [Ｃ语言标准库](https://www.yiibai.com/c_standard_library/math_h.html)
+11. [Ｃ＋＋　MIME邮件库](https://www.vmime.org/)
+12. [C++函数指针模板](https://www.cnblogs.com/xianyunhe/archive/2011/11/27/2265148.html)
+13. [C++调用JAVA方法详解](https://www.iteye.com/blog/public0821-423941)
+14. [Google 开源项目Ｃ＋＋风格指南](https://zh-google-styleguide.readthedocs.io/en/latest/google-cpp-styleguide/contents/)
+15. [标准轻量的Ｃ库实现Klib，包括常见的数据结构实现](https://github.com/attractivechaos/klib)
+16. [类Ｇlib C库 tbox](https://github.com/tboox/tbox)
+17. [Doxygen的注释风格](https://my.oschina.net/zhfish/blog/35422)
+18. [java 中的锁 -- 偏向锁、轻量级锁、自旋锁、重量级锁](https://blog.csdn.net/zqz_zqz/article/details/70233767/)
+19. [Java Core Sprout](https://crossoverjie.top/JCSprout/#/)
+20. [JAVA 并发编程网](https://ifeve.com/)
+21. [Java 并行编程](http://tutorials.jenkov.com/java-concurrency/costs.html)
+22. [Java 并行编程工具类详解](http://tutorials.jenkov.com/java-util-concurrent/index.html)
 
 
 ## 嵌入式开发及ＤＮＮ加速
@@ -119,9 +132,7 @@
 2. [Ａnt Ｄesign，中后台前端框架](https://preview.pro.ant.design/dashboard/analysis)
 3. [C++ DirectUI, DuiVision](http://www.blueantstudio.net/duivision.html)
 4. [C# Winform 开发UI框架CSkin](http://www.cskin.net/)
-5. [ECMAScript 6 入门](http://es6.ruanyifeng.com/#docs/set-map)
-6. [JS实现继承的几种方式](https://www.cnblogs.com/humin/p/4556820.html)
-7. [JS中的prototype](https://www.cnblogs.com/yjf512/archive/2011/06/03/2071914.html)
+
 ## 程序打包及安装
 1. [NSIS进阶教程](https://blog.csdn.net/taiyang1987912/article/details/40506439)
 2. [在线打包工具 Cloud Setuper](https://www.oschina.net/p/cloud-setuper)
@@ -130,36 +141,53 @@
 1. [使用valgrind的callgrind工具进行多线程性能分析](https://www.tuicool.com/articles/nUZJBb2)
 2. [Google test benchnark](https://github.com/google/benchmark)
 3. [超全整理！Linux性能分析工具汇总合集](https://zhuanlan.zhihu.com/p/52107689)
+4. 测试驱动开发总结
+![测试驱动开发总结](images/GoogleTest.png)
+
 
 ## 深度学习及机器视觉
 1. [知乎深度学习大讲堂](https://zhuanlan.zhihu.com/dlclass)
-2. [深度学习论文阅读](https://zhuanlan.zhihu.com/c_159931745)
-3. [机器人视觉资源综合](https://github.com/Ewenwan/MVision)
-4. [ApacheCN 人工智能知识树](https://github.com/apachecn/ai-roadmap/tree/master/v1.0)
-5. [人工智能的下一个拐点：图神经网络迎来快速爆发期](https://www.infoq.cn/article/LjmbcEgqZV6dzXlFRsjf)
-6. [CSDN 机器学习 Machine Learning](https://blog.csdn.net/xbinworld/category_878118_1.html)
-7. [机器学习与人工智能技术分享](https://www.zybuluo.com/vivounicorn/note/446479)
+2. [国外知名大学机器学习课程汇总](https://github.com/RatulGhosh/awesome-machine-learning)
+3. [深度学习论文阅读](https://zhuanlan.zhihu.com/c_159931745)
+4. [机器人视觉资源综合](https://github.com/Ewenwan/MVision)
+5. [ApacheCN 人工智能知识树](https://github.com/apachecn/ai-roadmap/tree/master/v1.0)
+6. [人工智能的下一个拐点：图神经网络迎来快速爆发期](https://www.infoq.cn/article/LjmbcEgqZV6dzXlFRsjf)
+7. [CSDN 机器学习 Machine Learning](https://blog.csdn.net/xbinworld/category_878118_1.html)
+8. [机器学习与人工智能技术分享](https://www.zybuluo.com/vivounicorn/note/446479)
+9. [数学知识点滴积累  矩阵 数值优化 神经网络反向传播 图优化 概率论 随机过程 卡尔曼滤波 粒子滤波](https://github.com/xiangweizeng/Mathematics)
+
+### 机器学习
+1. [机器学习python库　scikit-learn](https://scikit-learn.org/stable/)
+2. [斯坦福大学公开课 :机器学习课](http://www.mooc.ai/course/40/lesson/list)
+3. [轻松理解卡尔曼滤波](https://www.jianshu.com/p/f6ce8943560c?from=singlemessage)
+4. [卡尔曼滤波是如何工作的](http://www.bzarg.com/p/how-a-kalman-filter-works-in-pictures/)
+5. [机器学习的数学基础](https://zhuanlan.zhihu.com/p/25197792)
+6. [机器学习资源汇总](https://github.com/src-d/awesome-machine-learning-on-source-code)
+7. [计算仿射变换六参数(Python)](https://www.iteye.com/blog/robekeane-2035395)
+8. [利用最小二乘法求解仿射变换参数](https://www.cnblogs.com/bingdaocaihong/p/7003581.html)
 
 ### CNN
 1. [卷积神经网络常用激活函数总结](https://blog.csdn.net/hduxiejun/article/details/70815620)
 2. [神经网络浅讲：从神经元到深度学习](https://www.cnblogs.com/subconscious/p/5058741.html)
 3. [零基础入门深度学习](https://www.zybuluo.com/hanbingtao/note/433855)
-4. [吴恩达　神经网络和深度学习](https://mooc.study.163.com/course/2001281002?tid=2001392029&_trace_c_p_k2_=3bf6a2467d75464ebdc475af8f5f09ba#/info)
-5. [深度学习中 Batch Normalization为什么效果好？](https://www.zhihu.com/question/38102762)
-6. [深度学习中的batch的大小对学习效果有何影响？](https://www.zhihu.com/question/32673260)
-7. [卷积神经网络操作技巧](https://www.jianshu.com/p/a3c83280482b)
-8. [如何直观地解释 backpropagation 算法？](https://www.zhihu.com/question/27239198)
-9. [ＤＮＮ可视化研究员Colah的博客](http://colah.github.io/)
-10. [机器学习可视化博客DISTILL](https://distill.pub/)
-11. [深度学习可视化Js组件 tensorspace　](https://tensorspace.org/html/docs/startIntro.html)
-12. [理解 LSTM 网络](https://www.jianshu.com/p/9dc9f41f0b29)
-13. [RNN-LSTM-GRU](https://zhuanlan.zhihu.com/p/60915302)
-14. [获奖无数的深度残差学习](https://www.leiphone.com/news/201606/BhcC5LV32tdot6DD.html?viewType=weixin)
-15. [CAFFE卷积层的实现](https://blog.csdn.net/l691899397/article/details/52240421)
-16. [CNN(卷积神经网络)、RNN(循环神经网络)、DNN(深度神经网络)的内部网络结构有什么区别？](https://www.zhihu.com/question/34681168)
-17. [基于3D卷积神经网络的人体行为理解](https://blog.csdn.net/zouxy09/article/details/9002508)
-18. [一个模型库学习所有](https://blog.csdn.net/amds123/article/details/73485914)
-19. [One Model to Learn Them All详解](https://blog.csdn.net/shenxiaolu1984/article/details/73736259)
+4. [神经网络与深度学习](https://tigerneil.gitbooks.io/neural-networks-and-deep-learning-zh/content/)
+5. [吴恩达　神经网络和深度学习](https://mooc.study.163.com/course/2001281002?tid=2001392029&_trace_c_p_k2_=3bf6a2467d75464ebdc475af8f5f09ba#/info)
+6. [Deep Learning 中文翻译](https://github.com/exacity/deeplearningbook-chinese)
+7. [深度学习中 Batch Normalization为什么效果好？](https://www.zhihu.com/question/38102762)
+8. [深度学习中的batch的大小对学习效果有何影响？](https://www.zhihu.com/question/32673260)
+9. [卷积神经网络操作技巧](https://www.jianshu.com/p/a3c83280482b)
+10. [如何直观地解释 backpropagation 算法？](https://www.zhihu.com/question/27239198)
+11. [ＤＮＮ可视化研究员Colah的博客](http://colah.github.io/)
+12. [机器学习可视化博客DISTILL](https://distill.pub/)
+13. [深度学习可视化Js组件 tensorspace　](https://tensorspace.org/html/docs/startIntro.html)
+14. [理解 LSTM 网络](https://www.jianshu.com/p/9dc9f41f0b29)
+15. [RNN-LSTM-GRU](https://zhuanlan.zhihu.com/p/60915302)
+16. [获奖无数的深度残差学习](https://www.leiphone.com/news/201606/BhcC5LV32tdot6DD.html?viewType=weixin)
+17. [CAFFE卷积层的实现](https://blog.csdn.net/l691899397/article/details/52240421)
+18. [CNN(卷积神经网络)、RNN(循环神经网络)、DNN(深度神经网络)的内部网络结构有什么区别？](https://www.zhihu.com/question/34681168)
+19. [基于3D卷积神经网络的人体行为理解](https://blog.csdn.net/zouxy09/article/details/9002508)
+20. [一个模型库学习所有](https://blog.csdn.net/amds123/article/details/73485914)
+21. [One Model to Learn Them All详解](https://blog.csdn.net/shenxiaolu1984/article/details/73736259)
 
 ### 目标检测
 1. [YOLO 检测系列算法](https://pjreddie.com/darknet/yolo/)
@@ -209,24 +237,15 @@
 3. [Pytorch 神经网络压缩工具　distiller](https://github.com/NervanaSystems/distiller)
 4. [CCCV, C语言的视觉处理库](https://github.com/liuliu/ccv)
 5. [CMSIS Version 嵌入式开发组件](https://github.com/ARM-software/CMSIS_5)
-6. 纯Ｃ的深度学习框架Darknet
+6. [纯Ｃ的深度学习框架Darknet](https://github.com/pjreddie/darknet)
 7. [CPU量化神经网络加速　QNNPACK](https://github.com/pytorch/QNNPACK)
-8. CPU浮点神经网络加速　XNNPACK
+8. [CPU浮点神经网络加速　XNNPACK](https://github.com/google/XNNPACK)
 9. [移动端深度学习部署框架NCNN](https://github.com/Tencent/ncnn)
-10. 移动端深度学习部署框架MNN
-11. [移动端深度学习部署框架MACE](https://github.com/XiaoMi/mace)
-12. [Darknet 转换　tensorflow darkflow](https://github.com/thtrieu/darkflow)
-13. [FaceBook 目标检测系列算法实现　Detection](https://github.com/facebookresearch/Detectron)
-
-### 机器学习
-1. [机器学习python库　scikit-learn](https://scikit-learn.org/stable/)
-2. [斯坦福大学公开课 :机器学习课](http://www.mooc.ai/course/40/lesson/list)
-3. [轻松理解卡尔曼滤波](https://www.jianshu.com/p/f6ce8943560c?from=singlemessage)
-4. [卡尔曼滤波是如何工作的](http://www.bzarg.com/p/how-a-kalman-filter-works-in-pictures/)
-5. [机器学习的数学基础](https://zhuanlan.zhihu.com/p/25197792)
-6. [机器学习资源汇总](https://github.com/src-d/awesome-machine-learning-on-source-code)
-7. [计算仿射变换六参数(Python)](https://www.iteye.com/blog/robekeane-2035395)
-8. [利用最小二乘法求解仿射变换参数](https://www.cnblogs.com/bingdaocaihong/p/7003581.html)
+10. [移动端深度学习部署框架MNN](https://github.com/alibaba/MNN)
+11. [MNNKit Demo](https://github.com/alibaba/MNNKitDemo)
+12. [移动端深度学习部署框架MACE](https://github.com/XiaoMi/mace)
+13. [Darknet 转换　tensorflow darkflow](https://github.com/thtrieu/darkflow)
+14. [FaceBook 目标检测系列算法实现　Detection](https://github.com/facebookresearch/Detectron)
 
 ### 数据集
 1. [自己学习深度学习时，有哪些途径寻找数据集？](https://www.zhihu.com/question/53655758/answer/156701855)
@@ -242,6 +261,48 @@
 4. [车牌及车数据集　platesmania](http://platesmania.com/si/nomer14082487)
 5. [世界各国车牌](http://www.worldlicenseplates.com/)
 6. [世界各国车牌发展史](http://www.licenseplatemania.com/landenframes/oostenrijk_fr.htm)
+
+## 分布式开发
+
+### WEB 服务器相关
+1. [Nginx 中文文档](http://www.nginx.cn/doc/)
+2. [Squid中文权威指南](https://www.phpfans.net/manu/Squid/)
+3. [HTTP 代理原理及实现](https://imququ.com/post/web-proxy.html)
+4. [Nginx 正向代理配置](https://blog.csdn.net/u012796139/article/details/50067951)
+5. [Nginx开发从入门到精通](http://tengine.taobao.org/book/index.html)
+
+### 数据库
+1. [Redis面试题及分布式集群](https://blog.csdn.net/yajlv/article/details/73467865)
+2. [Mysql 5.6主从同步配置与解决方案](https://www.cnblogs.com/kezf/p/mysql-slave.html)
+3. [ORMlite 对象映射](http://ormlite.com/javadoc/ormlite-core/doc-files/ormlite_2.html#Using)
+4. [搭建高可用负载均衡的Mysql集群](https://www.cnblogs.com/phpstudy2015-6/p/6706465.html)
+5. ＳQL总结
+![ＳQL总结](images/Sql.png)
+6. 关系数据库总结
+![关系数据库总结](images/数据库.png)
+6. Ｒedis总结
+![Ｒedis总结](images/Redis思维导图.png)
+
+### 高性能高并发
+1. [高性能、高并发、高扩展性和可读性的网络服务器架构：StateThreads](https://blog.csdn.net/win_lin/article/details/8242653)
+2. [Poll性能比较分析](http://lse.sourceforge.net/epoll/index.html)
+3. [高性能 TCP 堆栈 mTCP](https://www.oschina.net/p/mtcp)
+4. [C/C++ 服务端及网络开发组件ACL](https://github.com/acl-dev/acl)
+5. [高性能C++网络库ｍuduo](https://github.com/chenshuo/muduo)
+
+### 分布式原理
+1. [事务补偿机制](https://www.iteye.com/blog/zhaoshijie-2148089)
+2. [分布式事务——消息最终一致性方案](https://www.jianshu.com/p/04bad986a4a2)
+3. [Paxos算法原理与推导](https://www.cnblogs.com/linbingdong/p/6253479.html)
+4. [分布式系统Paxos算法](https://www.jdon.com/artichect/paxos.html)
+5. [Zookeeper 配置和原理探究](https://www.cnblogs.com/balfish/p/4864588.html)
+6. [分布式事务，两阶段提交协议，三阶段提交协议](https://www.cnblogs.com/balfish/p/8658691.html)
+7. [分布式事务除两阶段提交外的其他解决方案](https://blog.csdn.net/hxpjava1/article/details/79409395)
+
+### 工程化方法
+1. [分布式系统的工程化开发方法](https://blog.csdn.net/solstice/article/details/5950190)
+2. [基于消息的分布式架构](https://www.infoq.cn/article/message-based-distributed-architecture/)
+3. [微服务架构体系的深度治理](https://www.infoq.cn/article/q65dDiRTdSbF*E6Ki2P4)
 
 ## 大数据处理
 
@@ -302,24 +363,29 @@
 ### 离线批处理
 1. [一篇文章全面解析大数据批处理框架 Spring Batch](https://www.infoq.cn/article/analysis-of-large-data-batch-framework-spring-batch/)
 2. [SpringBatch 文档](https://docs.spring.io/spring-batch/docs/)
-3. [Ｓpring Cloud Task 文档]（https://docs.spring.io/spring-cloud-task/docs/1.2.3.RELEASE/reference/htmlsingle/#getting-started-running-the-example）
+3. [Ｓpring Cloud Task 文档](https://docs.spring.io/spring-cloud-task/docs/1.2.3.RELEASE/reference/htmlsingle/#getting-started-running-the-example)
 
 ### 消息中间件
 1. [ZeroMQ RFC](https://rfc.zeromq.org/)
 2. [ZeroMQ 架构](http://wiki.zeromq.org/whitepapers:architecture)
 3. [zeromq源码分析笔记之架构1](https://blog.csdn.net/zdy0_2004/article/details/50526595)
 4. [ZeroMq的几个高性能特性](https://blog.csdn.net/yangbutao/article/details/8498790)
-5. [ampq协议中文完整版](https://my.oschina.net/dddttttt/blog/541078)
-6. [消息中间件（Kafka/RabbitMQ）收录集](https://blog.csdn.net/u013256816/article/details/54743481)
-7. [RabbitMQ分布式集群架构](https://blog.csdn.net/woogeyu/article/details/51119101)
-8. [RabbitMQ的应用场景以及基本原理介绍](https://blog.csdn.net/whoamiyang/article/details/54954780)
-9. [如何选择Ｋafka和RabbitMq](https://content.pivotal.io/rabbitmq/understanding-when-to-use-rabbitmq-or-apache-kafka)
-10. [RabbitMQ 面试题](https://blog.csdn.net/HiBoyljw/article/details/85123099)
-11. [RocketMq事务消息](https://www.jianshu.com/p/c26b3af5880f)
+5. ＺeroMq 分析总结
+![ＺeroMq 分析总结](images/ZeroMq分析.png)
+6. [ampq协议中文完整版](https://my.oschina.net/dddttttt/blog/541078)
+7. [消息中间件（Kafka/RabbitMQ）收录集](https://blog.csdn.net/u013256816/article/details/54743481)
+8. [RabbitMQ分布式集群架构](https://blog.csdn.net/woogeyu/article/details/51119101)
+9.  [RabbitMQ的应用场景以及基本原理介绍](https://blog.csdn.net/whoamiyang/article/details/54954780)
+10. [如何选择Ｋafka和RabbitMq](https://content.pivotal.io/rabbitmq/understanding-when-to-use-rabbitmq-or-apache-kafka)
+11. [RabbitMQ 面试题](https://blog.csdn.net/HiBoyljw/article/details/85123099)
+12. [RocketMq事务消息](https://www.jianshu.com/p/c26b3af5880f)
 
-#### 综合解决方案
+### 综合解决方案
 1. [MegaEase ](https://megaease.com/zh/#gateway?tdsourcetag=s_pctim_aiomsg)
 2. [Halo Framework](https://xujin.org/projects/halo/overview/)
+3. [系统架构师入门资源](https://github.com/xiangweizeng/system-design-primer)
+4. [Java 技术书籍大全](https://github.com/xiangweizeng/awesome-java-books)
+5. [后端架构师技术图谱](https://github.com/xingshaocheng/architect-awesome)
 
 ## 金融期货
 1. [市价触发单](http://www.ftchinese.com/story/001003210?archive)
@@ -328,8 +394,10 @@
 4. [OnixS C++ FIX Engine](https://www.onixs.biz/cpp-fix-engine.html)
 5. [ＣＱＧ交易平台](https://mdemo.cqg.com/cqg/desktop/demorequest)
 6. [Ｆix8 高性能Fix库](https://www.fix8.org/downloads.html)
+7. 期货交易系统核心功能
+![期货核心交易系统](images/期货交易系统核心功能.png)
 
-### 电动汽车
+## 电动汽车
 1. [详解电动汽车动力电池系统](http://www.sohu.com/a/138622287_410558)
 2. [百度脑图电动汽车电池监控项](https://naotu.baidu.com/file/0870ba03f51b5ed3ef4e02ee10761203)
 3. [BMS算法中关于健康状态（SOH）的模型设计](https://www.ind4.net/html/news/newsDetail_6973.html#newsComment1790)
@@ -346,18 +414,23 @@
 ## 综合及学习
 1. [人事面试题目总结](https://blog.csdn.net/qq_23994787/article/details/77941532#_Toc20221)
 2. [技术面试必备基础知识](https://github.com/CyC2018/CS-Notes)
-3. [学习网站累积](https://blog.csdn.net/beitiandijun/article/details/39520911)
-4. [菜鸟教程](https://www.runoob.com/)
-5. [赛码](https://www.acmcoder.com/index)
-6. [leetcode](https://leetcode.com/)
-7. [脚本之家](https://www.jb51.net/)
-8. [网易公开课](https://open.163.com/)
-9. [极客学院](https://www.jikexueyuan.com/)
-10. [中国大学ＭＯＯＣ](https://www.icourse163.org/home.htm?userId=1017519521#/home/course)
-11. [优达学城](https://classroom.udacity.com/courses/ud730)
-12. [arxiv论文网](https://arxiv.org/corr)
-13. [推酷](https://www.tuicool.com/)
-14. [开源工场](https://openingsource.org/)
-15. [Coursera](https://www.coursera.org/)
-16. [AＩ学习综合网](http://www.studyai.com/course/index/)
-17. [中国科学技术大学课程资源](https://ustc-resource.github.io/USTC-Course/)
+3. [开源中国](https://www.oschina.net/)
+4. [学习网站累积](https://blog.csdn.net/beitiandijun/article/details/39520911)
+5. [菜鸟教程](https://www.runoob.com/)
+6. [赛码](https://www.acmcoder.com/index)
+7. [leetcode](https://leetcode.com/)
+8. [脚本之家](https://www.jb51.net/)
+9. [网易公开课](https://open.163.com/)
+10. [极客学院](https://www.jikexueyuan.com/)
+11. [中国大学ＭＯＯＣ](https://www.icourse163.org/home.htm?userId=1017519521#/home/course)
+12. [优达学城](https://classroom.udacity.com/courses/ud730)
+13. [极客时间](https://time.geekbang.org/)
+14. [arxiv论文网](https://arxiv.org/corr)
+15. [推酷](https://www.tuicool.com/)
+16. [掘金](https://juejin.im/)
+17. [开源工场](https://openingsource.org/)
+18. [Coursera](https://www.coursera.org/)
+19. [AＩ学习综合网](http://www.studyai.com/course/index/)
+20. [中国科学技术大学课程资源](https://ustc-resource.github.io/USTC-Course/)
+21. 深度学习－高效学习
+![高效学习](images/深度学习-高效学习.png)
