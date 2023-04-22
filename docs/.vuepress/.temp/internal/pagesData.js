@@ -3,6 +3,8 @@ export const pagesData = {
   "v-8daa1a0e": () => import(/* webpackChunkName: "v-8daa1a0e" */"D:/project/docs/damone-blog/docs/.vuepress/.temp/pages/index.html.js").then(({ data }) => data),
   // path: /about/
   "v-74bc627b": () => import(/* webpackChunkName: "v-74bc627b" */"D:/project/docs/damone-blog/docs/.vuepress/.temp/pages/about/index.html.js").then(({ data }) => data),
+  // path: /blog/
+  "v-145ac574": () => import(/* webpackChunkName: "v-145ac574" */"D:/project/docs/damone-blog/docs/.vuepress/.temp/pages/blog/index.html.js").then(({ data }) => data),
   // path: /collect-data/development.html
   "v-6c575b87": () => import(/* webpackChunkName: "v-6c575b87" */"D:/project/docs/damone-blog/docs/.vuepress/.temp/pages/collect-data/development.html.js").then(({ data }) => data),
   // path: /collect-data/distributed-system.html
@@ -13,16 +15,8 @@ export const pagesData = {
   "v-e592dcdc": () => import(/* webpackChunkName: "v-e592dcdc" */"D:/project/docs/damone-blog/docs/.vuepress/.temp/pages/collect-data/other.html.js").then(({ data }) => data),
   // path: /collect-data/
   "v-871e45ee": () => import(/* webpackChunkName: "v-871e45ee" */"D:/project/docs/damone-blog/docs/.vuepress/.temp/pages/collect-data/index.html.js").then(({ data }) => data),
-  // path: /blog/
-  "v-145ac574": () => import(/* webpackChunkName: "v-145ac574" */"D:/project/docs/damone-blog/docs/.vuepress/.temp/pages/blog/index.html.js").then(({ data }) => data),
   // path: /computer-science/
   "v-cad07a38": () => import(/* webpackChunkName: "v-cad07a38" */"D:/project/docs/damone-blog/docs/.vuepress/.temp/pages/computer-science/index.html.js").then(({ data }) => data),
-  // path: /blog/application/application-01.html
-  "v-75a490c8": () => import(/* webpackChunkName: "v-75a490c8" */"D:/project/docs/damone-blog/docs/.vuepress/.temp/pages/blog/application/application-01.html.js").then(({ data }) => data),
-  // path: /blog/application/application-02.html
-  "v-77596967": () => import(/* webpackChunkName: "v-77596967" */"D:/project/docs/damone-blog/docs/.vuepress/.temp/pages/blog/application/application-02.html.js").then(({ data }) => data),
-  // path: /blog/application/
-  "v-7c96dc53": () => import(/* webpackChunkName: "v-7c96dc53" */"D:/project/docs/damone-blog/docs/.vuepress/.temp/pages/blog/application/index.html.js").then(({ data }) => data),
   // path: /blog/dnn/pub-01.html
   "v-01e0e76e": () => import(/* webpackChunkName: "v-01e0e76e" */"D:/project/docs/damone-blog/docs/.vuepress/.temp/pages/blog/dnn/pub-01.html.js").then(({ data }) => data),
   // path: /blog/dnn/pub-02.html
@@ -33,6 +27,14 @@ export const pagesData = {
   "v-042e1626": () => import(/* webpackChunkName: "v-042e1626" */"D:/project/docs/damone-blog/docs/.vuepress/.temp/pages/blog/dnn/pub-04.html.js").then(({ data }) => data),
   // path: /blog/dnn/
   "v-36020aff": () => import(/* webpackChunkName: "v-36020aff" */"D:/project/docs/damone-blog/docs/.vuepress/.temp/pages/blog/dnn/index.html.js").then(({ data }) => data),
+  // path: /blog/application/application-01.html
+  "v-75a490c8": () => import(/* webpackChunkName: "v-75a490c8" */"D:/project/docs/damone-blog/docs/.vuepress/.temp/pages/blog/application/application-01.html.js").then(({ data }) => data),
+  // path: /blog/application/application-02.html
+  "v-77596967": () => import(/* webpackChunkName: "v-77596967" */"D:/project/docs/damone-blog/docs/.vuepress/.temp/pages/blog/application/application-02.html.js").then(({ data }) => data),
+  // path: /blog/application/application-03.html
+  "v-790e4206": () => import(/* webpackChunkName: "v-790e4206" */"D:/project/docs/damone-blog/docs/.vuepress/.temp/pages/blog/application/application-03.html.js").then(({ data }) => data),
+  // path: /blog/application/
+  "v-7c96dc53": () => import(/* webpackChunkName: "v-7c96dc53" */"D:/project/docs/damone-blog/docs/.vuepress/.temp/pages/blog/application/index.html.js").then(({ data }) => data),
   // path: /blog/operation-system/linux-01.html
   "v-641d96d9": () => import(/* webpackChunkName: "v-641d96d9" */"D:/project/docs/damone-blog/docs/.vuepress/.temp/pages/blog/operation-system/linux-01.html.js").then(({ data }) => data),
   // path: /blog/operation-system/
@@ -47,6 +49,8 @@ export const pagesData = {
   "v-6d04e676": () => import(/* webpackChunkName: "v-6d04e676" */"D:/project/docs/damone-blog/docs/.vuepress/.temp/pages/blog/operation-system/windows-04.html.js").then(({ data }) => data),
   // path: /computer-science/data-structure/
   "v-583f07bb": () => import(/* webpackChunkName: "v-583f07bb" */"D:/project/docs/damone-blog/docs/.vuepress/.temp/pages/computer-science/data-structure/index.html.js").then(({ data }) => data),
+  // path: /computer-science/data-structure/00.%E7%BB%AA%E8%AE%BA/0.%E7%BB%AA%E8%AE%BA.html
+  "v-74f9725f": () => import(/* webpackChunkName: "v-74f9725f" */"D:/project/docs/damone-blog/docs/.vuepress/.temp/pages/computer-science/data-structure/00.绪论/0.绪论.html.js").then(({ data }) => data),
   // path: /computer-science/data-structure/01.%E7%BA%BF%E6%80%A7%E8%A1%A8/1.1%E7%BA%BF%E6%80%A7%E8%A1%A8.html
   "v-17056428": () => import(/* webpackChunkName: "v-17056428" */"D:/project/docs/damone-blog/docs/.vuepress/.temp/pages/computer-science/data-structure/01.线性表/1.1线性表.html.js").then(({ data }) => data),
   // path: /computer-science/data-structure/01.%E7%BA%BF%E6%80%A7%E8%A1%A8/1.2%E7%BA%BF%E6%80%A7%E8%A1%A8%E7%9A%84%E9%A1%BA%E5%BA%8F%E8%A1%A8%E7%A4%BA.html
@@ -59,8 +63,6 @@ export const pagesData = {
   "v-7bfa983e": () => import(/* webpackChunkName: "v-7bfa983e" */"D:/project/docs/damone-blog/docs/.vuepress/.temp/pages/computer-science/data-structure/01.线性表/1.5循环链表.html.js").then(({ data }) => data),
   // path: /computer-science/data-structure/01.%E7%BA%BF%E6%80%A7%E8%A1%A8/1.6%E9%9D%99%E6%80%81%E9%93%BE%E8%A1%A8.html
   "v-2b38b758": () => import(/* webpackChunkName: "v-2b38b758" */"D:/project/docs/damone-blog/docs/.vuepress/.temp/pages/computer-science/data-structure/01.线性表/1.6静态链表.html.js").then(({ data }) => data),
-  // path: /computer-science/data-structure/00.%E7%BB%AA%E8%AE%BA/0.%E7%BB%AA%E8%AE%BA.html
-  "v-74f9725f": () => import(/* webpackChunkName: "v-74f9725f" */"D:/project/docs/damone-blog/docs/.vuepress/.temp/pages/computer-science/data-structure/00.绪论/0.绪论.html.js").then(({ data }) => data),
   // path: /computer-science/data-structure/02.%E6%A0%88%E5%92%8C%E9%98%9F%E5%88%97/2.1%E6%A0%88.html
   "v-7dd883f5": () => import(/* webpackChunkName: "v-7dd883f5" */"D:/project/docs/damone-blog/docs/.vuepress/.temp/pages/computer-science/data-structure/02.栈和队列/2.1栈.html.js").then(({ data }) => data),
   // path: /computer-science/data-structure/02.%E6%A0%88%E5%92%8C%E9%98%9F%E5%88%97/2.2%E6%A0%88%E7%9A%84%E9%A1%BA%E5%BA%8F%E5%AD%98%E5%82%A8.html
@@ -155,10 +157,10 @@ export const pagesData = {
   "v-0b4d529c": () => import(/* webpackChunkName: "v-0b4d529c" */"D:/project/docs/damone-blog/docs/.vuepress/.temp/pages/computer-science/data-structure/summary/数据结构核心考点.html.js").then(({ data }) => data),
   // path: /404.html
   "v-3706649a": () => import(/* webpackChunkName: "v-3706649a" */"D:/project/docs/damone-blog/docs/.vuepress/.temp/pages/404.html.js").then(({ data }) => data),
-  // path: /computer-science/data-structure/01.%E7%BA%BF%E6%80%A7%E8%A1%A8/
-  "v-118fb51a": () => import(/* webpackChunkName: "v-118fb51a" */"D:/project/docs/damone-blog/docs/.vuepress/.temp/pages/computer-science/data-structure/01.线性表/index.html.js").then(({ data }) => data),
   // path: /computer-science/data-structure/00.%E7%BB%AA%E8%AE%BA/
   "v-2c029960": () => import(/* webpackChunkName: "v-2c029960" */"D:/project/docs/damone-blog/docs/.vuepress/.temp/pages/computer-science/data-structure/00.绪论/index.html.js").then(({ data }) => data),
+  // path: /computer-science/data-structure/01.%E7%BA%BF%E6%80%A7%E8%A1%A8/
+  "v-118fb51a": () => import(/* webpackChunkName: "v-118fb51a" */"D:/project/docs/damone-blog/docs/.vuepress/.temp/pages/computer-science/data-structure/01.线性表/index.html.js").then(({ data }) => data),
   // path: /computer-science/data-structure/02.%E6%A0%88%E5%92%8C%E9%98%9F%E5%88%97/
   "v-0f8386d2": () => import(/* webpackChunkName: "v-0f8386d2" */"D:/project/docs/damone-blog/docs/.vuepress/.temp/pages/computer-science/data-structure/02.栈和队列/index.html.js").then(({ data }) => data),
   // path: /computer-science/data-structure/03.%E4%B8%B2/
@@ -229,12 +231,6 @@ export const pagesData = {
   "v-7849dbd0": () => import(/* webpackChunkName: "v-7849dbd0" */"D:/project/docs/damone-blog/docs/.vuepress/.temp/pages/category/综合及学习/index.html.js").then(({ data }) => data),
   // path: /category/%E5%B7%A5%E4%BD%9C%E6%80%BB%E7%BB%93/
   "v-d7663088": () => import(/* webpackChunkName: "v-d7663088" */"D:/project/docs/damone-blog/docs/.vuepress/.temp/pages/category/工作总结/index.html.js").then(({ data }) => data),
-  // path: /category/%E6%99%BA%E6%85%A7%E9%BB%91%E6%9D%BF/
-  "v-bc3d2b42": () => import(/* webpackChunkName: "v-bc3d2b42" */"D:/project/docs/damone-blog/docs/.vuepress/.temp/pages/category/智慧黑板/index.html.js").then(({ data }) => data),
-  // path: /category/android/
-  "v-29da37b8": () => import(/* webpackChunkName: "v-29da37b8" */"D:/project/docs/damone-blog/docs/.vuepress/.temp/pages/category/android/index.html.js").then(({ data }) => data),
-  // path: /category/%E5%BA%94%E7%94%A8%E5%8D%87%E7%BA%A7/
-  "v-5089bfcf": () => import(/* webpackChunkName: "v-5089bfcf" */"D:/project/docs/damone-blog/docs/.vuepress/.temp/pages/category/应用升级/index.html.js").then(({ data }) => data),
   // path: /category/%E5%AE%A2%E6%B5%81%E7%BB%9F%E8%AE%A1/
   "v-e90ef6c6": () => import(/* webpackChunkName: "v-e90ef6c6" */"D:/project/docs/damone-blog/docs/.vuepress/.temp/pages/category/客流统计/index.html.js").then(({ data }) => data),
   // path: /category/%E9%AB%98%E6%95%88%E8%83%BD%E5%8A%A0%E9%80%9F/
@@ -247,6 +243,18 @@ export const pagesData = {
   "v-51250588": () => import(/* webpackChunkName: "v-51250588" */"D:/project/docs/damone-blog/docs/.vuepress/.temp/pages/category/车牌识别/index.html.js").then(({ data }) => data),
   // path: /category/cnet/
   "v-57d4b7fd": () => import(/* webpackChunkName: "v-57d4b7fd" */"D:/project/docs/damone-blog/docs/.vuepress/.temp/pages/category/cnet/index.html.js").then(({ data }) => data),
+  // path: /category/%E6%99%BA%E6%85%A7%E9%BB%91%E6%9D%BF/
+  "v-bc3d2b42": () => import(/* webpackChunkName: "v-bc3d2b42" */"D:/project/docs/damone-blog/docs/.vuepress/.temp/pages/category/智慧黑板/index.html.js").then(({ data }) => data),
+  // path: /category/android/
+  "v-29da37b8": () => import(/* webpackChunkName: "v-29da37b8" */"D:/project/docs/damone-blog/docs/.vuepress/.temp/pages/category/android/index.html.js").then(({ data }) => data),
+  // path: /category/%E5%BA%94%E7%94%A8%E5%8D%87%E7%BA%A7/
+  "v-5089bfcf": () => import(/* webpackChunkName: "v-5089bfcf" */"D:/project/docs/damone-blog/docs/.vuepress/.temp/pages/category/应用升级/index.html.js").then(({ data }) => data),
+  // path: /category/%E6%89%8B%E5%8A%BF%E8%AF%86%E5%88%AB/
+  "v-9cbc5afe": () => import(/* webpackChunkName: "v-9cbc5afe" */"D:/project/docs/damone-blog/docs/.vuepress/.temp/pages/category/手势识别/index.html.js").then(({ data }) => data),
+  // path: /category/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86/
+  "v-5bf89d1e": () => import(/* webpackChunkName: "v-5bf89d1e" */"D:/project/docs/damone-blog/docs/.vuepress/.temp/pages/category/图像处理/index.html.js").then(({ data }) => data),
+  // path: /category/%E7%9B%AE%E6%A0%87%E8%B7%9F%E8%B8%AA/
+  "v-7ebab051": () => import(/* webpackChunkName: "v-7ebab051" */"D:/project/docs/damone-blog/docs/.vuepress/.temp/pages/category/目标跟踪/index.html.js").then(({ data }) => data),
   // path: /category/linux/
   "v-9c48d85a": () => import(/* webpackChunkName: "v-9c48d85a" */"D:/project/docs/damone-blog/docs/.vuepress/.temp/pages/category/linux/index.html.js").then(({ data }) => data),
   // path: /category/m5-mips/
@@ -257,6 +265,4 @@ export const pagesData = {
   "v-4b470bdb": () => import(/* webpackChunkName: "v-4b470bdb" */"D:/project/docs/damone-blog/docs/.vuepress/.temp/pages/category/计算机科学/index.html.js").then(({ data }) => data),
   // path: /category/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/
   "v-4f178b9c": () => import(/* webpackChunkName: "v-4f178b9c" */"D:/project/docs/damone-blog/docs/.vuepress/.temp/pages/category/数据结构/index.html.js").then(({ data }) => data),
-  // path: /blog/application/application-03.html
-  "v-790e4206": () => import(/* webpackChunkName: "v-790e4206" */"D:/project/docs/damone-blog/docs/.vuepress/.temp/pages/blog/application/application-03.html.js").then(({ data }) => data),
 }

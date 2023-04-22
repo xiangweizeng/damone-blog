@@ -1,26 +1,26 @@
 import { sidebar } from "vuepress-theme-hope";
 
 export const zhSidebar = sidebar({
-  "/": [
+  "/computer-science/": [
     {
       icon: "mdi:computer-classic",
       text: "计算机基础",
-      prefix: "computer-science/",
-      link: "computer-science/",
       children: "structure",
     },
+  ],
+  "/collect-data/": [
     {
       text: "收藏资料",
       icon: "mdi:collection",
-      prefix: "collect-data/",
-      link: "collect-data/",
+      prefix: "",
+      link: "",
       children: "structure",
     },
+  ],
+  "/blog/": [
     {
       text: "工作日志",
       icon: "mdi:collection",
-      prefix: "blog/",
-      link: "blog/",
       children: "structure",
     },
   ],

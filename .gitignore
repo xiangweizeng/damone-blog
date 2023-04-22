@@ -2,3 +2,5 @@
 
 blog/.vuepress/.cache/
 blog/.vuepress/.temp/
+docs/.vuepress/.cache/
+docs/.vuepress/.temp/
