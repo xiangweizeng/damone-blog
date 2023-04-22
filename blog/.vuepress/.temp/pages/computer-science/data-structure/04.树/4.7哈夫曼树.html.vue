@@ -1,0 +1,18 @@
+<template><div><h1 id="_4-7-哈夫曼树" tabindex="-1"><a class="header-anchor" href="#_4-7-哈夫曼树" aria-hidden="true">#</a> 4.7 哈夫曼树</h1>
+<h2 id="_4-7-1-带权路径长度" tabindex="-1"><a class="header-anchor" href="#_4-7-1-带权路径长度" aria-hidden="true">#</a> 4.7.1 带权路径长度</h2>
+<p>结点的<code v-pre>权</code>：有某种现实含义的数值（如：结点的重要性等）</p>
+<p><code v-pre>结点的带权路径长度=该结点的路径长度×该结点的权值</code></p>
+<p><code v-pre>树的带权路径长度</code>=所有<code v-pre>叶结点</code>的<code v-pre>带权路径长度之和</code></p>
+<h2 id="_4-7-2-哈夫曼树的定义" tabindex="-1"><a class="header-anchor" href="#_4-7-2-哈夫曼树的定义" aria-hidden="true">#</a> 4.7.2 哈夫曼树的定义</h2>
+<p>给定N个权值作为N个叶子结点，构造一棵二叉树，若该树的<code v-pre>带权路径长度达到最小</code>，称这样的二叉树为<code v-pre>最优二叉树</code>，也称为<code v-pre>哈夫曼树</code>(Huffman Tree)。</p>
+<p>哈夫曼树是带权路径长度最短的树，权值较大的结点离根较近。</p>
+<figure><img src="/images/datastruct/5366d0160924ab1886c1109d3ffae6cd7a890b40.webp" alt="img" tabindex="0" loading="lazy"><figcaption>img</figcaption></figure>
+<h2 id="_4-7-3-哈夫曼树的构造" tabindex="-1"><a class="header-anchor" href="#_4-7-3-哈夫曼树的构造" aria-hidden="true">#</a> 4.7.3 哈夫曼树的构造</h2>
+<p>哈夫曼树构造的树可以不同，但带权路径长度相同</p>
+<h2 id="_4-7-4-哈夫曼编码" tabindex="-1"><a class="header-anchor" href="#_4-7-4-哈夫曼编码" aria-hidden="true">#</a> 4.7.4 哈夫曼编码</h2>
+<p>①固定长度编码：平衡二叉树</p>
+<p>②可变长度编码：哈夫曼树（最优二叉树）</p>
+<figure><img src="/images/datastruct/1637761333305.jpg" alt="1637761333305" tabindex="0" loading="lazy"><figcaption>1637761333305</figcaption></figure>
+</div></template>
+
+

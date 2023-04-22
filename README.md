@@ -1,5 +1,5 @@
 # Ocean docs
 
-- Preview: `npm run docs:dev`
-- Build: `npm run docs:build`
+- Preview: `npm run dev`
+- Build: `npm run build`
 

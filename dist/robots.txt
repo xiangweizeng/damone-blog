@@ -1,5 +1,0 @@
-
-User-agent:*
-Disallow:
-
-Sitemap: https://github.com/xiangweizeng/sitemap.xml
