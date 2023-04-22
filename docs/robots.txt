@@ -2,4 +2,4 @@
 User-agent:*
 Disallow:
 
-Sitemap: https://github.com/xiangweizeng/sitemap.xml
+Sitemap: https://github.com/xiangweizeng/damone-blog/sitemap.xml
