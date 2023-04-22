@@ -12,7 +12,7 @@ import {
 } from "./plugin/container.js";
 
 export default defineUserConfig({
-  base: "/",
+  base: "/damone-blog",
 
   locales: {
     "/": {
