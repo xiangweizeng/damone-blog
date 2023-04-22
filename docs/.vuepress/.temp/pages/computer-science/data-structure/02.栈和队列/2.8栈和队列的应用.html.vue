@@ -1,0 +1,71 @@
+<template><div><h1 id="_2-8-栈和队列的应用" tabindex="-1"><a class="header-anchor" href="#_2-8-栈和队列的应用" aria-hidden="true">#</a> 2.8 栈和队列的应用</h1>
+<h2 id="_2-8-1-栈的应用" tabindex="-1"><a class="header-anchor" href="#_2-8-1-栈的应用" aria-hidden="true">#</a> 2.8.1 栈的应用</h2>
+<h2 id="栈在括号匹配中的应用" tabindex="-1"><a class="header-anchor" href="#栈在括号匹配中的应用" aria-hidden="true">#</a> 栈在括号匹配中的应用</h2>
+<ol>
+<li>初始设置一个空栈，顺序读入括号</li>
+<li>若是右括号，则或者置于栈顶的最急迫期待得以消解，或者是不合法的情况</li>
+<li>若是左括号，则作为一个新的更急迫的期待压入栈中</li>
+<li>算法结束时，栈为空，否则括号序列不匹配</li>
+</ol>
+<h2 id="表达式求值-中缀表达式求值" tabindex="-1"><a class="header-anchor" href="#表达式求值-中缀表达式求值" aria-hidden="true">#</a> 表达式求值(中缀表达式求值)</h2>
+<p>三种表达式：<code v-pre>中缀表达式</code>、<code v-pre>后缀表达式</code>、<code v-pre>前缀表达式</code></p>
+<p>中缀表达式：有界限符</p>
+<p>后缀和前缀表达式：无界限符</p>
+<p><code v-pre>注</code>：方法一和方法二都是分开的，分为两步</p>
+<h3 id="方法一-中缀表达式转后缀表达式-再用后缀表达式求值" tabindex="-1"><a class="header-anchor" href="#方法一-中缀表达式转后缀表达式-再用后缀表达式求值" aria-hidden="true">#</a> 方法一：中缀表达式转后缀表达式，再用后缀表达式求值</h3>
+<ol>
+<li>中缀表达式转后缀表达式（用<code v-pre>栈</code>保存<code v-pre>运算符</code>）</li>
+</ol>
+<blockquote>
+<p>中缀表达式<code v-pre>从左往右</code>扫描：</p>
+<p>①遇到<code v-pre>操作数</code>，直接压入栈。</p>
+<p>②遇到<code v-pre>界限符</code>，遇到“（”，直接压入栈；遇到“）”，依次弹出栈内运算符<code v-pre>从左往右</code>加入表达式，直到弹出“（”结束。</p>
+<p>③遇到<code v-pre>运算符</code>，依次弹出比这个运算符优先级高的所有运算符，将此运算符压入栈。</p>
+</blockquote>
+<ol start="2">
+<li>后缀表达式求值（用<code v-pre>栈</code>存<code v-pre>运算结果</code>）</li>
+</ol>
+<blockquote>
+<p>后缀表达式<code v-pre>从左往右</code>扫描：</p>
+<p>①遇到<code v-pre>操作数</code>，直接压入栈。</p>
+<p>②遇到<code v-pre>运算符</code>，弹出两个元素，执行相应运算，将运算结果压回栈顶</p>
+</blockquote>
+<h3 id="方法二-中缀表达式转前缀表达式-再用前缀表达式求值" tabindex="-1"><a class="header-anchor" href="#方法二-中缀表达式转前缀表达式-再用前缀表达式求值" aria-hidden="true">#</a> 方法二：中缀表达式转前缀表达式，再用前缀表达式求值</h3>
+<ol>
+<li>中缀表达式转前缀表达式（用<code v-pre>栈</code>保存<code v-pre>运算符</code>）</li>
+</ol>
+<blockquote>
+<p>中缀表达式<code v-pre>从右往左</code>扫描：</p>
+<p>①遇到<code v-pre>操作数</code>，直接压入栈。</p>
+<p>②遇到<code v-pre>界限符</code>，遇到“（”，直接压入栈；遇到“）”，依次弹出栈内运算符<code v-pre>从右往左</code>加入表达式，直到弹出“（”结束。</p>
+<p>③遇到<code v-pre>运算符</code>，依次弹出比这个运算符优先级高的所有运算符，将此运算符压入栈。</p>
+</blockquote>
+<ol start="2">
+<li>前缀表达式求值（用<code v-pre>栈</code>存<code v-pre>运算结果</code>）</li>
+</ol>
+<blockquote>
+<p>前缀表达式<code v-pre>从右往左</code>扫描：</p>
+<p>①遇到<code v-pre>操作数</code>，直接压入栈。</p>
+<p>②遇到<code v-pre>运算符</code>，弹出两个元素，执行相应运算，将运算结果压回栈顶</p>
+</blockquote>
+<h2 id="递归" tabindex="-1"><a class="header-anchor" href="#递归" aria-hidden="true">#</a> 递归</h2>
+<p>可以将递归算法转换为非递归算法。通常需要借助栈来实现这种转换</p>
+<h1 id="_2-8-2-队列的应用" tabindex="-1"><a class="header-anchor" href="#_2-8-2-队列的应用" aria-hidden="true">#</a> 2.8.2 队列的应用</h1>
+<ol>
+<li>
+<p>树的层次遍历</p>
+</li>
+<li>
+<p>图的广度优先遍历</p>
+</li>
+<li>
+<p>操作系统中的应用</p>
+</li>
+</ol>
+<blockquote>
+<p>多个进程争抢有限的系统资源时，采用<code v-pre>先来先服务算法(FCFS)</code></p>
+<p>例子：CPU资源分配；打印数据缓冲区</p>
+</blockquote>
+</div></template>
+
+

@@ -1,0 +1,224 @@
+<template><div><h1 id="_4-3-线索二叉树" tabindex="-1"><a class="header-anchor" href="#_4-3-线索二叉树" aria-hidden="true">#</a> 4.3 线索二叉树</h1>
+<h2 id="_4-3-1-线索二叉树定义" tabindex="-1"><a class="header-anchor" href="#_4-3-1-线索二叉树定义" aria-hidden="true">#</a> 4.3.1 线索二叉树定义</h2>
+<p>背景：为解决遍历只能从根结点开始这个问题，因为普通二叉树找前驱和后继很麻烦</p>
+<p><code v-pre>线索二叉树</code>在二叉树的结点上加上<code v-pre>线索</code>的二叉树。</p>
+<h2 id="_4-3-2-线索二叉树的存储结构" tabindex="-1"><a class="header-anchor" href="#_4-3-2-线索二叉树的存储结构" aria-hidden="true">#</a> 4.3.2 线索二叉树的存储结构</h2>
+<p>由二叉树的链式存储改进而来</p>
+<h3 id="二叉树的类型表述" tabindex="-1"><a class="header-anchor" href="#二叉树的类型表述" aria-hidden="true">#</a> 二叉树的类型表述</h3>
+<div class="language-c line-numbers-mode" data-ext="c"><pre v-pre class="language-c"><code><span class="token keyword">typedef</span> <span class="token keyword">struct</span> <span class="token class-name">TreeNode</span><span class="token punctuation">{</span>
+	Elemtype data<span class="token punctuation">;</span>                   <span class="token comment">//数据域</span>
+	<span class="token keyword">struct</span> <span class="token class-name">BiTNode</span> <span class="token operator">*</span>lchide<span class="token punctuation">,</span> <span class="token operator">*</span>rchild<span class="token punctuation">;</span> <span class="token comment">//左、右孩子指针</span>
+<span class="token punctuation">}</span>BiTNode<span class="token punctuation">,</span> <span class="token operator">*</span>BiTree<span class="token punctuation">;</span>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3 id="线索二叉树的类型表述" tabindex="-1"><a class="header-anchor" href="#线索二叉树的类型表述" aria-hidden="true">#</a> 线索二叉树的类型表述</h3>
+<div class="language-c line-numbers-mode" data-ext="c"><pre v-pre class="language-c"><code><span class="token keyword">typedef</span> <span class="token keyword">struct</span> <span class="token class-name">TreeNode</span><span class="token punctuation">{</span>
+	Elemtype data<span class="token punctuation">;</span>                   <span class="token comment">//数据域</span>
+	<span class="token keyword">struct</span> <span class="token class-name">BiTNode</span> <span class="token operator">*</span>lchide<span class="token punctuation">,</span> <span class="token operator">*</span>rchild<span class="token punctuation">;</span> <span class="token comment">//左、右孩子指针</span>
+    <span class="token keyword">int</span> ltag<span class="token punctuation">,</span> rtag<span class="token punctuation">;</span>                  <span class="token comment">//左、右线索标志</span>
+<span class="token punctuation">}</span>ThreadNode<span class="token punctuation">,</span> <span class="token operator">*</span>ThreadTree<span class="token punctuation">;</span>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><ul>
+<li><code v-pre>tag==0</code>：表示指针指向<code v-pre>孩子</code></li>
+<li><code v-pre>tag==1</code>：表示指针指向<code v-pre>线索</code></li>
+</ul>
+<h2 id="_4-3-3-线索二叉树的分类" tabindex="-1"><a class="header-anchor" href="#_4-3-3-线索二叉树的分类" aria-hidden="true">#</a> 4.3.3 线索二叉树的分类</h2>
+<p><code v-pre>中序线索二叉树</code>、<code v-pre>先序线索二叉树</code>、<code v-pre>后续线索二叉树</code></p>
+<h2 id="_4-3-4-二叉树线索化" tabindex="-1"><a class="header-anchor" href="#_4-3-4-二叉树线索化" aria-hidden="true">#</a> 4.3.4 二叉树线索化</h2>
+<p><code v-pre>对二叉树进行线索化</code>：对二叉树以某种遍历方式（如先序、中序、后序或层次等）进行遍历，使其变为线索二叉树的过程。</p>
+<h3 id="中序线索化" tabindex="-1"><a class="header-anchor" href="#中序线索化" aria-hidden="true">#</a> 中序线索化</h3>
+<div class="language-c line-numbers-mode" data-ext="c"><pre v-pre class="language-c"><code><span class="token comment">//全局变量pre，指向当前访问结点的前驱</span>
+ThreadNode <span class="token operator">*</span>pre <span class="token operator">=</span> <span class="token constant">NULL</span><span class="token punctuation">;</span>
+
+<span class="token comment">//中序线索化二叉树T(三种一样，只是调用线索化函数不同)</span>
+<span class="token keyword">void</span> <span class="token function">CreateThread</span><span class="token punctuation">(</span>ThreadTree T<span class="token punctuation">)</span><span class="token punctuation">{</span>
+    pre <span class="token operator">=</span> <span class="token constant">NULL</span><span class="token punctuation">;</span>              <span class="token comment">//pre初始为NULL</span>
+    <span class="token keyword">if</span><span class="token punctuation">(</span>T <span class="token operator">!=</span> <span class="token constant">NULL</span><span class="token punctuation">)</span><span class="token punctuation">{</span>           <span class="token comment">//非空二叉树才能线索化</span>
+        <span class="token function">InTread</span><span class="token punctuation">(</span>T<span class="token punctuation">)</span><span class="token punctuation">;</span>          <span class="token comment">//中序线索化二叉树</span>
+        <span class="token keyword">if</span><span class="token punctuation">(</span>pre<span class="token operator">-></span>rchild <span class="token operator">==</span> <span class="token constant">NULL</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+            pre<span class="token operator">-></span>rtag <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>   <span class="token comment">//处理遍历的最后一个结点</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">//中序遍历二叉树，一边遍历，一边线索化</span>
+<span class="token keyword">void</span> <span class="token function">InOrder</span><span class="token punctuation">(</span>ThreadTree T<span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token keyword">if</span><span class="token punctuation">(</span>T<span class="token operator">!=</span><span class="token constant">NULL</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+        <span class="token function">InOrder</span><span class="token punctuation">(</span>T<span class="token operator">-></span>lchild<span class="token punctuation">)</span><span class="token punctuation">;</span>	<span class="token comment">//递归遍历左子树</span>
+        <span class="token function">visit</span><span class="token punctuation">(</span>T<span class="token punctuation">)</span><span class="token punctuation">;</span>               <span class="token comment">//访问根结点</span>
+        <span class="token function">InOrder</span><span class="token punctuation">(</span>T<span class="token operator">-></span>rchild<span class="token punctuation">)</span><span class="token punctuation">;</span>	<span class="token comment">//递归遍历右子树</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">//访问结点，顺便线索化（三种一样）</span>
+<span class="token keyword">void</span> <span class="token function">visit</span><span class="token punctuation">(</span>TheadNode <span class="token operator">*</span>q<span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token keyword">if</span><span class="token punctuation">(</span>q<span class="token operator">-></span>lchild <span class="token operator">==</span> <span class="token constant">NULL</span><span class="token punctuation">)</span><span class="token punctuation">{</span><span class="token comment">//左子树为空，建立前驱线索</span>
+        q<span class="token operator">-></span>lchild <span class="token operator">=</span> pre<span class="token punctuation">;</span>
+        q<span class="token operator">-></span>ltag <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">if</span><span class="token punctuation">(</span>pre<span class="token operator">!=</span><span class="token constant">NULL</span> <span class="token operator">&amp;&amp;</span> pre<span class="token operator">-></span>rchild<span class="token operator">==</span><span class="token constant">NULL</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+        pre<span class="token operator">-></span>rchild <span class="token operator">=</span> q<span class="token punctuation">;</span> <span class="token comment">//建立前驱结点的后继线索</span>
+        pre<span class="token operator">-></span>rtage <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    pre <span class="token operator">=</span> q<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3 id="先序线索化" tabindex="-1"><a class="header-anchor" href="#先序线索化" aria-hidden="true">#</a> 先序线索化</h3>
+<div class="language-c line-numbers-mode" data-ext="c"><pre v-pre class="language-c"><code><span class="token comment">//全局变量pre，指向当前访问结点的前驱</span>
+ThreadNode <span class="token operator">*</span>pre <span class="token operator">=</span> <span class="token constant">NULL</span><span class="token punctuation">;</span>
+
+<span class="token comment">//先序线索化二叉树T(三种一样，只是调用线索化函数不同)</span>
+<span class="token keyword">void</span> <span class="token function">CreateThread</span><span class="token punctuation">(</span>ThreadTree T<span class="token punctuation">)</span><span class="token punctuation">{</span>
+    pre <span class="token operator">=</span> <span class="token constant">NULL</span><span class="token punctuation">;</span>              <span class="token comment">//pre初始为NULL</span>
+    <span class="token keyword">if</span><span class="token punctuation">(</span>T <span class="token operator">!=</span> <span class="token constant">NULL</span><span class="token punctuation">)</span><span class="token punctuation">{</span>           <span class="token comment">//非空二叉树才能线索化</span>
+        <span class="token function">PreTread</span><span class="token punctuation">(</span>T<span class="token punctuation">)</span><span class="token punctuation">;</span>         <span class="token comment">//先序线索化二叉树</span>
+        <span class="token keyword">if</span><span class="token punctuation">(</span>pre<span class="token operator">-></span>rchild <span class="token operator">==</span> <span class="token constant">NULL</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+            pre<span class="token operator">-></span>rtag <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>   <span class="token comment">//处理遍历的最后一个结点</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">//中序遍历二叉树，一边遍历，一边线索化</span>
+<span class="token keyword">void</span> <span class="token function">PreOrder</span><span class="token punctuation">(</span>ThreadTree T<span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token keyword">if</span><span class="token punctuation">(</span>T<span class="token operator">!=</span><span class="token constant">NULL</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+        <span class="token function">visit</span><span class="token punctuation">(</span>T<span class="token punctuation">)</span><span class="token punctuation">;</span>               <span class="token comment">//访问根结点</span>
+        <span class="token keyword">if</span><span class="token punctuation">(</span>T<span class="token operator">-></span>ltag <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">)</span>        <span class="token comment">//lchild不是前驱线索，是线索还遍历则无限循环</span>
+            <span class="token function">InOrder</span><span class="token punctuation">(</span>T<span class="token operator">-></span>lchild<span class="token punctuation">)</span><span class="token punctuation">;</span>	<span class="token comment">//递归遍历左子树</span>
+        <span class="token function">InOrder</span><span class="token punctuation">(</span>T<span class="token operator">-></span>rchild<span class="token punctuation">)</span><span class="token punctuation">;</span>	    <span class="token comment">//递归遍历右子树</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">//访问结点，顺便线索化（三种一样）</span>
+<span class="token keyword">void</span> <span class="token function">visit</span><span class="token punctuation">(</span>TheadNode <span class="token operator">*</span>q<span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token keyword">if</span><span class="token punctuation">(</span>q<span class="token operator">-></span>lchild <span class="token operator">==</span> <span class="token constant">NULL</span><span class="token punctuation">)</span><span class="token punctuation">{</span><span class="token comment">//左子树为空，建立前驱线索</span>
+        q<span class="token operator">-></span>lchild <span class="token operator">=</span> pre<span class="token punctuation">;</span>
+        q<span class="token operator">-></span>ltag <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">if</span><span class="token punctuation">(</span>pre<span class="token operator">!=</span><span class="token constant">NULL</span> <span class="token operator">&amp;&amp;</span> pre<span class="token operator">-></span>rchild<span class="token operator">==</span><span class="token constant">NULL</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+        pre<span class="token operator">-></span>rchild <span class="token operator">=</span> q<span class="token punctuation">;</span> <span class="token comment">//建立前驱结点的后继线索</span>
+        pre<span class="token operator">-></span>rtage <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    pre <span class="token operator">=</span> q<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3 id="后续线索化" tabindex="-1"><a class="header-anchor" href="#后续线索化" aria-hidden="true">#</a> 后续线索化</h3>
+<div class="language-c line-numbers-mode" data-ext="c"><pre v-pre class="language-c"><code><span class="token comment">//全局变量pre，指向当前访问结点的前驱</span>
+ThreadNode <span class="token operator">*</span>pre <span class="token operator">=</span> <span class="token constant">NULL</span><span class="token punctuation">;</span>
+
+<span class="token comment">//后序线索化二叉树T(三种一样，只是调用线索化函数不同)</span>
+<span class="token keyword">void</span> <span class="token function">CreateThread</span><span class="token punctuation">(</span>ThreadTree T<span class="token punctuation">)</span><span class="token punctuation">{</span>
+    pre <span class="token operator">=</span> <span class="token constant">NULL</span><span class="token punctuation">;</span>              <span class="token comment">//pre初始为NULL</span>
+    <span class="token keyword">if</span><span class="token punctuation">(</span>T <span class="token operator">!=</span> <span class="token constant">NULL</span><span class="token punctuation">)</span><span class="token punctuation">{</span>           <span class="token comment">//非空二叉树才能线索化</span>
+        <span class="token function">PostTread</span><span class="token punctuation">(</span>T<span class="token punctuation">)</span><span class="token punctuation">;</span>        <span class="token comment">//后序线索化二叉树</span>
+        <span class="token keyword">if</span><span class="token punctuation">(</span>pre<span class="token operator">-></span>rchild <span class="token operator">==</span> <span class="token constant">NULL</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+            pre<span class="token operator">-></span>rtag <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>   <span class="token comment">//处理遍历的最后一个结点</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">//中序遍历二叉树，一边遍历，一边线索化</span>
+<span class="token keyword">void</span> <span class="token function">PostOrder</span><span class="token punctuation">(</span>ThreadTree T<span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token keyword">if</span><span class="token punctuation">(</span>T<span class="token operator">!=</span><span class="token constant">NULL</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+        <span class="token function">InOrder</span><span class="token punctuation">(</span>T<span class="token operator">-></span>lchild<span class="token punctuation">)</span><span class="token punctuation">;</span>	    <span class="token comment">//递归遍历左子树</span>
+        <span class="token function">InOrder</span><span class="token punctuation">(</span>T<span class="token operator">-></span>rchild<span class="token punctuation">)</span><span class="token punctuation">;</span>	    <span class="token comment">//递归遍历右子树</span>
+        <span class="token function">visit</span><span class="token punctuation">(</span>T<span class="token punctuation">)</span><span class="token punctuation">;</span>               <span class="token comment">//访问根结点</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">//访问结点，顺便线索化（三种一样）</span>
+<span class="token keyword">void</span> <span class="token function">visit</span><span class="token punctuation">(</span>TheadNode <span class="token operator">*</span>q<span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token keyword">if</span><span class="token punctuation">(</span>q<span class="token operator">-></span>lchild <span class="token operator">==</span> <span class="token constant">NULL</span><span class="token punctuation">)</span><span class="token punctuation">{</span><span class="token comment">//左子树为空，建立前驱线索</span>
+        q<span class="token operator">-></span>lchild <span class="token operator">=</span> pre<span class="token punctuation">;</span>
+        q<span class="token operator">-></span>ltag <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">if</span><span class="token punctuation">(</span>pre<span class="token operator">!=</span><span class="token constant">NULL</span> <span class="token operator">&amp;&amp;</span> pre<span class="token operator">-></span>rchild<span class="token operator">==</span><span class="token constant">NULL</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+        pre<span class="token operator">-></span>rchild <span class="token operator">=</span> q<span class="token punctuation">;</span> <span class="token comment">//建立前驱结点的后继线索</span>
+        pre<span class="token operator">-></span>rtage <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    pre <span class="token operator">=</span> q<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2 id="_4-3-5-线索二叉树找前驱和后继" tabindex="-1"><a class="header-anchor" href="#_4-3-5-线索二叉树找前驱和后继" aria-hidden="true">#</a> 4.3.5 线索二叉树找前驱和后继</h2>
+<h3 id="中序线索二叉树找中序后继" tabindex="-1"><a class="header-anchor" href="#中序线索二叉树找中序后继" aria-hidden="true">#</a> 中序线索二叉树找中序后继</h3>
+<p>在<code v-pre>中序线索二叉树</code>中找指定结点*p的<code v-pre>中序后继next</code></p>
+<p>算法思想：</p>
+<p>(1)若<code v-pre>p-&gt;rtag == 1</code>，则next为后继线索，即<code v-pre>next = p-&gt;rchild</code>。</p>
+<p>(2)若<code v-pre>p-&gt;rtag == 0</code>，则p必有右孩子，<code v-pre>next为p的右子树中最左下结点</code>。</p>
+<div class="language-c line-numbers-mode" data-ext="c"><pre v-pre class="language-c"><code><span class="token comment">//找到以P为根的子树中，第一个被中序遍历的结点</span>
+ThreadNode <span class="token operator">*</span><span class="token function">Firstnode</span><span class="token punctuation">(</span>ThreadNode <span class="token operator">*</span>p<span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token comment">//循环找到最左下结点(不一定是叶子结点)</span>
+    <span class="token keyword">while</span><span class="token punctuation">(</span>p<span class="token operator">-></span>ltag <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">)</span> p <span class="token operator">=</span> p<span class="token operator">-></span>lchild<span class="token punctuation">;</span>
+    <span class="token keyword">return</span> p<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">//在中序线索二叉树中找到结点p的后继结点</span>
+TheadNode <span class="token operator">*</span><span class="token function">Nextnode</span><span class="token punctuation">(</span>ThreadNode <span class="token operator">*</span>p<span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token comment">//右子树中最左下结点</span>
+    <span class="token keyword">if</span><span class="token punctuation">(</span>p<span class="token operator">-></span>rtag <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token keyword">return</span> <span class="token function">Fistnode</span><span class="token punctuation">(</span>p<span class="token operator">-></span>rchild<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">else</span> <span class="token keyword">return</span> p<span class="token operator">-></span>rchild<span class="token punctuation">;</span>  <span class="token comment">//rtag=1直接返回后继线索</span>
+<span class="token punctuation">}</span>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h4 id="应用-中序线索二叉树的中序遍历" tabindex="-1"><a class="header-anchor" href="#应用-中序线索二叉树的中序遍历" aria-hidden="true">#</a> 应用：中序线索二叉树的中序遍历</h4>
+<p><code v-pre>空间复杂度</code>=O(1)</p>
+<div class="language-c line-numbers-mode" data-ext="c"><pre v-pre class="language-c"><code><span class="token comment">//对中序线索二又树进行中序遍历（利用线索实现的非递算法）</span>
+<span class="token keyword">void</span> <span class="token function">Inorder</span><span class="token punctuation">(</span>ThreadNode <span class="token operator">*</span>T<span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token keyword">for</span> <span class="token punctuation">(</span>ThreadNode <span class="token operator">*</span>p<span class="token operator">=</span><span class="token function">Firstnode</span><span class="token punctuation">(</span>T<span class="token punctuation">)</span><span class="token punctuation">;</span> p<span class="token operator">!=</span><span class="token constant">NULL</span><span class="token punctuation">;</span> p<span class="token operator">=</span><span class="token function">Nextnode</span><span class="token punctuation">(</span>p<span class="token punctuation">)</span><span class="token punctuation">)</span>
+		<span class="token function">visit</span> <span class="token punctuation">(</span>p<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3 id="中序线索二叉树找中序前驱" tabindex="-1"><a class="header-anchor" href="#中序线索二叉树找中序前驱" aria-hidden="true">#</a> 中序线索二叉树找中序前驱</h3>
+<p>在<code v-pre>中序线索二叉树</code>中找指定结点*p的<code v-pre>中序前驱pre</code></p>
+<p>算法思想：</p>
+<p>(1)若<code v-pre>p-&gt;rtag == 1</code>，则pre为前驱线索，即<code v-pre>pre = p-&gt;lchild</code>。</p>
+<p>(2)若<code v-pre>p-&gt;rtag == 0</code>，则p必有左孩子，<code v-pre>pre为p的左子树中最右下结点</code>。</p>
+<div class="language-c line-numbers-mode" data-ext="c"><pre v-pre class="language-c"><code><span class="token comment">//找到以P为根的子树中，最后一个被中序遍历的结点</span>
+ThreadNode <span class="token operator">*</span><span class="token function">Lastnode</span><span class="token punctuation">(</span>ThreadNode <span class="token operator">*</span>p<span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token comment">//循环找到最右下结点(不一定是叶子结点)</span>
+    <span class="token keyword">while</span><span class="token punctuation">(</span>p<span class="token operator">-></span>rtag <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">)</span> p <span class="token operator">=</span> p<span class="token operator">-></span>rchild<span class="token punctuation">;</span>
+    <span class="token keyword">return</span> p<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">//在中序线索二叉树中找到结点p的前驱结点</span>
+TheadNode <span class="token operator">*</span><span class="token function">Prenode</span><span class="token punctuation">(</span>ThreadNode <span class="token operator">*</span>p<span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token comment">//右子树中最左下结点</span>
+    <span class="token keyword">if</span><span class="token punctuation">(</span>p<span class="token operator">-></span>rtag <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token keyword">return</span> <span class="token function">Lastnode</span><span class="token punctuation">(</span>p<span class="token operator">-></span>lchild<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">else</span> <span class="token keyword">return</span> p<span class="token operator">-></span>lchild<span class="token punctuation">;</span>  <span class="token comment">//rtag=1直接返回前驱线索</span>
+<span class="token punctuation">}</span>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h4 id="应用-中序线索二叉树的逆向中序遍历" tabindex="-1"><a class="header-anchor" href="#应用-中序线索二叉树的逆向中序遍历" aria-hidden="true">#</a> 应用：中序线索二叉树的逆向中序遍历</h4>
+<p><code v-pre>空间复杂度</code>=O(1)</p>
+<div class="language-c line-numbers-mode" data-ext="c"><pre v-pre class="language-c"><code><span class="token comment">//对中序线索二又树进行逆向中序遍历（利用线索实现的非递算法）</span>
+<span class="token keyword">void</span> <span class="token function">Inorder</span><span class="token punctuation">(</span>ThreadNode <span class="token operator">*</span>T<span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token keyword">for</span> <span class="token punctuation">(</span>ThreadNode <span class="token operator">*</span>p<span class="token operator">=</span><span class="token function">Lastnode</span><span class="token punctuation">(</span>T<span class="token punctuation">)</span><span class="token punctuation">;</span> p<span class="token operator">!=</span><span class="token constant">NULL</span><span class="token punctuation">;</span> p<span class="token operator">=</span><span class="token function">Prenode</span><span class="token punctuation">(</span>p<span class="token punctuation">)</span><span class="token punctuation">)</span>
+		<span class="token function">visit</span> <span class="token punctuation">(</span>p<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3 id="先序线索二叉树找先序后继" tabindex="-1"><a class="header-anchor" href="#先序线索二叉树找先序后继" aria-hidden="true">#</a> 先序线索二叉树找先序后继</h3>
+<p>在<code v-pre>先序线索二叉树</code>中找指定结点*p的<code v-pre>先序后继next</code></p>
+<p>先序遍历：根左右。</p>
+<p>算法思想：</p>
+<p>(1)若<code v-pre>p-&gt;rtag == 1</code>，则pre为前驱线索，即<code v-pre>next = p-&gt;rchild</code>。</p>
+<p>(2)若<code v-pre>p-&gt;rtag == 0</code>，则</p>
+<p>①若<code v-pre>p有左孩子</code>，则<code v-pre>next为左孩子</code></p>
+<p>②若<code v-pre>p没有左孩子</code>，则<code v-pre>next为右孩子</code></p>
+<h3 id="先序线索二叉树找先序前驱" tabindex="-1"><a class="header-anchor" href="#先序线索二叉树找先序前驱" aria-hidden="true">#</a> 先序线索二叉树找先序前驱</h3>
+<p>在<code v-pre>先序线索二叉树</code>中找指定结点*p的<code v-pre>先序前驱pre</code></p>
+<p>由于先序遍历：根左右。p结点的左右子树中的结点只能是根的后继，不可能是前驱，因此<code v-pre>无法找前驱</code></p>
+<p><code v-pre>解决</code>：改用三叉链表，三个指针：指向父结点、左孩子结点和右孩子结点</p>
+<p>算法思想：</p>
+<p>(1)若<code v-pre>p-&gt;rtag == 1</code>，则pre为前驱线索，即<code v-pre>pre = p-&gt;lchild</code>。</p>
+<p>(2)若<code v-pre>p-&gt;rtag == 0</code>，则</p>
+<p>​	①若<code v-pre>能找到p的父结点</code>且<code v-pre>p是左孩子</code>，则<code v-pre>pre为父结点</code></p>
+<p>​	②若<code v-pre>能找到p的父结点</code>且<code v-pre>p是右孩子</code>，其<code v-pre>左兄弟为空</code>，则<code v-pre>pre为父结点</code></p>
+<p>​	②若<code v-pre>能找到p的父结点</code>且<code v-pre>p是右孩子</code>，其<code v-pre>左兄弟为非空</code>，则<code v-pre>pre为左兄弟子树中最后一个被先序遍历的结点</code>。</p>
+<h3 id="后序线索二叉树找后序后继" tabindex="-1"><a class="header-anchor" href="#后序线索二叉树找后序后继" aria-hidden="true">#</a> 后序线索二叉树找后序后继</h3>
+<p>在<code v-pre>后序线索二叉树</code>中找指定结点*p的<code v-pre>后序后继next</code></p>
+<p>由于后序遍历：左右根。p结点的左右子树中的结点只能是根的后前驱，不可能是后继，因此`无法找前后继</p>
+<p><code v-pre>解决</code>：改用三叉链表，三个指针：指向父结点、左孩子结点和右孩子结点</p>
+<p>算法思想：</p>
+<p>(1)若<code v-pre>p-&gt;rtag == 1</code>，则next为后继线索，即<code v-pre>next = p-&gt;rchild</code>。</p>
+<p>(2)若<code v-pre>p-&gt;rtag == 0</code>，则</p>
+<p>​	①若<code v-pre>能找到p的父结点</code>且<code v-pre>p是右孩子</code>，则<code v-pre>next为父结点</code></p>
+<p>​	②若<code v-pre>能找到p的父结点</code>且<code v-pre>p是左孩子</code>，其<code v-pre>右兄弟为空</code>，则<code v-pre>next为父结点</code></p>
+<p>​	②若<code v-pre>能找到p的父结点</code>且<code v-pre>p是左孩子</code>，其<code v-pre>右兄弟为非空</code>，则<code v-pre>next为左兄弟子树中第一个被后续序遍历的结点</code>。</p>
+<h3 id="后序线索二叉树找后序前驱" tabindex="-1"><a class="header-anchor" href="#后序线索二叉树找后序前驱" aria-hidden="true">#</a> 后序线索二叉树找后序前驱</h3>
+<p>在<code v-pre>后序线索二叉树</code>中找指定结点*p的<code v-pre>后序前驱pre</code></p>
+<p>先序遍历：左右根。</p>
+<p>算法思想：</p>
+<p>(1)若<code v-pre>p-&gt;rtag == 1</code>，则pre为前驱线索，即<code v-pre>pre = p-&gt;lchild</code>。</p>
+<p>(2)若<code v-pre>p-&gt;rtag == 0</code>，则</p>
+<p>①若<code v-pre>p有右孩子</code>，则<code v-pre>pre为右孩子</code></p>
+<p>②若<code v-pre>p没有右孩子</code>，则<code v-pre>pre为左孩子</code></p>
+</div></template>
+
+

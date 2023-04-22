@@ -8,8 +8,8 @@
   "license": "MIT",
   "private": true,
   "scripts": {
-    "dev": "vuepress dev blog",
-    "build": "vuepress build blog"
+    "dev": "vuepress dev docs",
+    "build": "vuepress build docs"
   },
   "devDependencies": {
     "@iconify/vue": "^4.1.1",

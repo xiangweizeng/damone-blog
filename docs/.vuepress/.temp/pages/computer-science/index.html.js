@@ -1,0 +1,14 @@
+export const data = JSON.parse("{\"key\":\"v-cad07a38\",\"path\":\"/computer-science/\",\"title\":\"计算机基础\",\"lang\":\"zh-CN\",\"frontmatter\":{\"icon\":\"mdi:computer-classic\",\"index\":false,\"article\":false,\"title\":\"计算机基础\",\"category\":[\"计算机基础\"],\"description\":\"数据结构\",\"head\":[[\"meta\",{\"property\":\"og:url\",\"content\":\"https://github.com/xiangweizeng/damone-blog/computer-science/\"}],[\"meta\",{\"property\":\"og:site_name\",\"content\":\"Damone's Blog\"}],[\"meta\",{\"property\":\"og:title\",\"content\":\"计算机基础\"}],[\"meta\",{\"property\":\"og:description\",\"content\":\"数据结构\"}],[\"meta\",{\"property\":\"og:type\",\"content\":\"website\"}],[\"meta\",{\"property\":\"og:locale\",\"content\":\"zh-CN\"}],[\"meta\",{\"property\":\"article:author\",\"content\":\"damone\"}],[\"script\",{\"type\":\"application/ld+json\"},\"{\\\"@context\\\":\\\"https://schema.org\\\",\\\"@type\\\":\\\"WebPage\\\",\\\"name\\\":\\\"计算机基础\\\",\\\"description\\\":\\\"数据结构\\\"}\"]]},\"headers\":[{\"level\":2,\"title\":\"数据结构\",\"slug\":\"数据结构\",\"link\":\"#数据结构\",\"children\":[]}],\"readingTime\":{\"minutes\":0.09,\"words\":26},\"filePathRelative\":\"computer-science/README.md\",\"excerpt\":\"<h2> <a href=\\\"/damone-blog/computer-science/data-structure/\\\" target=\\\"blank\\\">数据结构</a></h2>\\n\",\"autoDesc\":true}")
+
+if (import.meta.webpackHot) {
+  import.meta.webpackHot.accept()
+  if (__VUE_HMR_RUNTIME__.updatePageData) {
+    __VUE_HMR_RUNTIME__.updatePageData(data)
+  }
+}
+
+if (import.meta.hot) {
+  import.meta.hot.accept(({ data }) => {
+    __VUE_HMR_RUNTIME__.updatePageData(data)
+  })
+}

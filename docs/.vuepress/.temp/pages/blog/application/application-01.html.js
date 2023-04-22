@@ -1,0 +1,14 @@
+export const data = JSON.parse("{\"key\":\"v-75a490c8\",\"path\":\"/blog/application/application-01.html\",\"title\":\"智慧黑板\",\"lang\":\"zh-CN\",\"frontmatter\":{\"title\":\"智慧黑板\",\"category\":[\"工作总结\",\"智慧黑板\"],\"description\":\"1 功能概述 智慧黑板。 2 设计思路 监控终端子系统的设计思路如下图所示：\",\"head\":[[\"meta\",{\"property\":\"og:url\",\"content\":\"https://github.com/xiangweizeng/damone-blog/blog/application/application-01.html\"}],[\"meta\",{\"property\":\"og:site_name\",\"content\":\"Damone's Blog\"}],[\"meta\",{\"property\":\"og:title\",\"content\":\"智慧黑板\"}],[\"meta\",{\"property\":\"og:description\",\"content\":\"1 功能概述 智慧黑板。 2 设计思路 监控终端子系统的设计思路如下图所示：\"}],[\"meta\",{\"property\":\"og:type\",\"content\":\"article\"}],[\"meta\",{\"property\":\"og:locale\",\"content\":\"zh-CN\"}],[\"meta\",{\"property\":\"article:author\",\"content\":\"damone\"}],[\"script\",{\"type\":\"application/ld+json\"},\"{\\\"@context\\\":\\\"https://schema.org\\\",\\\"@type\\\":\\\"Article\\\",\\\"headline\\\":\\\"智慧黑板\\\",\\\"image\\\":[\\\"\\\"],\\\"dateModified\\\":null,\\\"author\\\":[{\\\"@type\\\":\\\"Person\\\",\\\"name\\\":\\\"damone\\\",\\\"url\\\":\\\"https://github.com/xiangweizeng\\\"}]}\"]]},\"headers\":[{\"level\":3,\"title\":\"1 功能概述\",\"slug\":\"_1-功能概述\",\"link\":\"#_1-功能概述\",\"children\":[]},{\"level\":3,\"title\":\"2 设计思路\",\"slug\":\"_2-设计思路\",\"link\":\"#_2-设计思路\",\"children\":[]},{\"level\":3,\"title\":\"下面简要概括各模块的相关功能\",\"slug\":\"下面简要概括各模块的相关功能\",\"link\":\"#下面简要概括各模块的相关功能\",\"children\":[]},{\"level\":3,\"title\":\"4 接口及消息交互简图\",\"slug\":\"_4-接口及消息交互简图\",\"link\":\"#_4-接口及消息交互简图\",\"children\":[]},{\"level\":3,\"title\":\"5 日志服务设计\",\"slug\":\"_5-日志服务设计\",\"link\":\"#_5-日志服务设计\",\"children\":[]},{\"level\":3,\"title\":\"6 ClientApi 插件设计\",\"slug\":\"_6-clientapi-插件设计\",\"link\":\"#_6-clientapi-插件设计\",\"children\":[]},{\"level\":3,\"title\":\"7 UI 插件管理器插件设计\",\"slug\":\"_7-ui-插件管理器插件设计\",\"link\":\"#_7-ui-插件管理器插件设计\",\"children\":[]},{\"level\":3,\"title\":\"20191104 新增功能\",\"slug\":\"_20191104-新增功能\",\"link\":\"#_20191104-新增功能\",\"children\":[]}],\"readingTime\":{\"minutes\":30.1,\"words\":9029},\"filePathRelative\":\"blog/application/application-01.md\",\"excerpt\":\"<h3> <a href=\\\"#1-%E5%8A%9F%E8%83%BD%E6%A6%82%E8%BF%B0\\\"></a>1 功能概述</h3>\\n<blockquote>\\n<p>智慧黑板。</p>\\n</blockquote>\\n<figure><figcaption></figcaption></figure>\\n<h3> <a href=\\\"#2-%E8%AE%BE%E8%AE%A1%E6%80%9D%E8%B7%AF\\\"></a>2 设计思路</h3>\\n<blockquote>\\n<p>监控终端子系统的设计思路如下图所示：</p>\\n</blockquote>\\n<figure><figcaption></figcaption></figure>\",\"autoDesc\":true}")
+
+if (import.meta.webpackHot) {
+  import.meta.webpackHot.accept()
+  if (__VUE_HMR_RUNTIME__.updatePageData) {
+    __VUE_HMR_RUNTIME__.updatePageData(data)
+  }
+}
+
+if (import.meta.hot) {
+  import.meta.hot.accept(({ data }) => {
+    __VUE_HMR_RUNTIME__.updatePageData(data)
+  })
+}

@@ -1,0 +1,25 @@
+<template><div><h2 id="_6-6-1-b-树的定义" tabindex="-1"><a class="header-anchor" href="#_6-6-1-b-树的定义" aria-hidden="true">#</a> 6.6.1 B+树的定义</h2>
+<p><code v-pre>B+树</code>，又名<code v-pre>多级分块查找</code>。</p>
+<p>数据库索引技术里大量使用者B树和B+树的数据结构.</p>
+<p>B+树是由<code v-pre>分块查找</code>升级为<code v-pre>查找树</code></p>
+<p>B树任何一层都可以找到，因为每一层都是数据
+而B+树除叶子结点外，其余都是分类，只有最底层才会指向数据，必须找到最底层才能知道是否成功。</p>
+<p>B+树有两种查找方式：</p>
+<ul>
+<li>分块查找：从根结点查</li>
+<li>顺序查找：从P开始横着查。</li>
+</ul>
+<figure><img src="/images/datastruct/uTools_1638279630033.png" alt="uTools_1638279630033" tabindex="0" loading="lazy"><figcaption>uTools_1638279630033</figcaption></figure>
+<figure><img src="/images/datastruct/uTools_1638279791118.png" alt="uTools_1638279791118" tabindex="0" loading="lazy"><figcaption>uTools_1638279791118</figcaption></figure>
+<h2 id="_6-6-2-查找效率分析" tabindex="-1"><a class="header-anchor" href="#_6-6-2-查找效率分析" aria-hidden="true">#</a> 6.6.2 查找效率分析</h2>
+<p>与B树一样</p>
+<h2 id="_6-6-3-b-树的插入" tabindex="-1"><a class="header-anchor" href="#_6-6-3-b-树的插入" aria-hidden="true">#</a> 6.6.3 B+树的插入</h2>
+<figure><img src="/images/datastruct/290050048129679.png" alt="B Plus tree" tabindex="0" loading="lazy"><figcaption>B Plus tree</figcaption></figure>
+<figure><img src="/images/datastruct/Bplustreebuild.gif" alt="img" tabindex="0" loading="lazy"><figcaption>img</figcaption></figure>
+<h2 id="_6-6-4-b-树的删除" tabindex="-1"><a class="header-anchor" href="#_6-6-4-b-树的删除" aria-hidden="true">#</a> 6.6.4 B+树的删除</h2>
+<p>与B树一样</p>
+<h2 id="_6-6-5-b树与b-树的对比" tabindex="-1"><a class="header-anchor" href="#_6-6-5-b树与b-树的对比" aria-hidden="true">#</a> 6.6.5 B树与B+树的对比</h2>
+<figure><img src="/images/datastruct/1638280509471.jpg" alt="1638280509471" tabindex="0" loading="lazy"><figcaption>1638280509471</figcaption></figure>
+</div></template>
+
+

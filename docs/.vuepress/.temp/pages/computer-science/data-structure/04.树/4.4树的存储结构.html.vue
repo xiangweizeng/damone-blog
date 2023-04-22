@@ -1,0 +1,85 @@
+<template><div><h1 id="_4-4-树的存储结构" tabindex="-1"><a class="header-anchor" href="#_4-4-树的存储结构" aria-hidden="true">#</a> 4.4 树的存储结构</h1>
+<h2 id="_4-4-1-存储结构" tabindex="-1"><a class="header-anchor" href="#_4-4-1-存储结构" aria-hidden="true">#</a> 4.4.1 存储结构</h2>
+<p><code v-pre>顺序存储</code>和<code v-pre>链式存储</code></p>
+<p>方法：
+<code v-pre>双亲表示法</code>（顺序存储）
+<code v-pre>孩子表示法</code>（顺序+链式存储）
+<code v-pre>孩子兄弟表示法</code>（链式存储）</p>
+<h2 id="_4-4-2-双亲表示法-顺序存储" tabindex="-1"><a class="header-anchor" href="#_4-4-2-双亲表示法-顺序存储" aria-hidden="true">#</a> 4.4.2 双亲表示法（顺序存储）</h2>
+<figure><img src="/images/datastruct/20200205124743184.jpg" alt="" tabindex="0" loading="lazy"><figcaption></figcaption></figure>
+<p>双亲表示法：<code v-pre>顺序存储</code>结点数据，结点中保存父结点在数组中的下标</p>
+<p><code v-pre>优点</code>：找父节点方便。
+<code v-pre>缺点</code>：找孩子不方便。</p>
+<p><code v-pre>注</code>：双亲表示法与二叉树的顺序存储不一样，双亲表示法也可表示二叉树</p>
+<h3 id="类型描述" tabindex="-1"><a class="header-anchor" href="#类型描述" aria-hidden="true">#</a> 类型描述</h3>
+<p><code v-pre>结点</code>包括<code v-pre>数据</code>和<code v-pre>父亲下标</code>，
+<code v-pre>树</code>包括<code v-pre>结点数组</code>和<code v-pre>结点个数</code></p>
+<div class="language-c line-numbers-mode" data-ext="c"><pre v-pre class="language-c"><code><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">define</span> <span class="token macro-name">MAX_TREE_SIZE</span> <span class="token expression"><span class="token number">100</span>         </span><span class="token comment">//树中最多结点数</span></span>
+<span class="token keyword">typedef</span> <span class="token keyword">struct</span><span class="token punctuation">{</span>                   <span class="token comment">//树的结点定义</span>
+    ElemType data<span class="token punctuation">;</span>                <span class="token comment">//数据元素</span>
+    <span class="token keyword">int</span> parent<span class="token punctuation">;</span>                   <span class="token comment">//双亲位置域</span>
+<span class="token punctuation">}</span>PTNode<span class="token punctuation">;</span>
+<span class="token keyword">typedef</span> <span class="token keyword">struct</span><span class="token punctuation">{</span>                   <span class="token comment">//树的类型定义</span>
+    PTNode nodes<span class="token punctuation">[</span>MAX_TREE_SIZE<span class="token punctuation">]</span><span class="token punctuation">;</span>  <span class="token comment">//双亲表示</span>
+    <span class="token keyword">int</span> n<span class="token punctuation">;</span>                        <span class="token comment">//结点数</span>
+<span class="token punctuation">}</span>PTree<span class="token punctuation">;</span>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3 id="增加一个结点" tabindex="-1"><a class="header-anchor" href="#增加一个结点" aria-hidden="true">#</a> 增加一个结点</h3>
+<p>新增元素，无需按逻辑次序存储，可以放到删除结点留下的存储空间里</p>
+<h3 id="删除一个结点" tabindex="-1"><a class="header-anchor" href="#删除一个结点" aria-hidden="true">#</a> 删除一个结点</h3>
+<p>方案一：数据取出，双亲指针改为-1</p>
+<p>方案二：用存储空间中最后一个存的结点把要删的结点覆盖</p>
+<h3 id="查找一个结点" tabindex="-1"><a class="header-anchor" href="#查找一个结点" aria-hidden="true">#</a> 查找一个结点</h3>
+<p>找父结点方便、找孩子不方便。</p>
+<p>空数据导致遍历慢。</p>
+<h2 id="_4-4-2-孩子表示法-顺序-链式存储" tabindex="-1"><a class="header-anchor" href="#_4-4-2-孩子表示法-顺序-链式存储" aria-hidden="true">#</a> 4.4.2 孩子表示法（顺序+链式存储）</h2>
+<figure><img src="/images/datastruct/2020020513261515.png" alt="" tabindex="0" loading="lazy"><figcaption></figcaption></figure>
+<p>孩子表示法：<code v-pre>顺序存储</code>结点数据，结点中保存孩子<code v-pre>链表</code>头指针（<code v-pre>链式存储</code>）</p>
+<p><code v-pre>优点</code>：找孩子方便。
+<code v-pre>缺点</code>：找父节点不方便。</p>
+<h3 id="类型描述-1" tabindex="-1"><a class="header-anchor" href="#类型描述-1" aria-hidden="true">#</a> 类型描述</h3>
+<p><code v-pre>孩子结点</code>包括<code v-pre>孩子下标</code>和<code v-pre>下一个孩子指针</code>，
+<code v-pre>数组</code>包括<code v-pre>数据</code>和<code v-pre>孩子结点</code>，
+<code v-pre>树</code>包括<code v-pre>数组</code>和<code v-pre>数组元素（结点）个数</code>及<code v-pre>根的下标</code></p>
+<div class="language-c line-numbers-mode" data-ext="c"><pre v-pre class="language-c"><code><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">define</span> <span class="token macro-name">MAX_TREE_SIZE</span> <span class="token expression"><span class="token number">100</span>         </span><span class="token comment">//树中最多结点数</span></span>
+<span class="token keyword">struct</span> <span class="token class-name">CTNode</span><span class="token punctuation">{</span>
+    <span class="token keyword">int</span> child<span class="token punctuation">;</span>                    <span class="token comment">//孩子结点在数组中的位置</span>
+	<span class="token keyword">struct</span> <span class="token class-name">CTNode</span> <span class="token operator">*</span>next<span class="token punctuation">;</span>          <span class="token comment">//下一个孩子</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token keyword">typedef</span> <span class="token keyword">struct</span><span class="token punctuation">{</span>
+    ElemType data<span class="token punctuation">;</span>
+	<span class="token keyword">struct</span> <span class="token class-name">CTNode</span><span class="token operator">*</span> firstchild<span class="token punctuation">;</span>    <span class="token comment">//第一个孩子</span>
+<span class="token punctuation">}</span>CTBox<span class="token punctuation">;</span>
+<span class="token keyword">typedef</span> <span class="token keyword">struct</span><span class="token punctuation">{</span>
+    CTBox nodes<span class="token punctuation">[</span>MAX_TREE_SIZE<span class="token punctuation">]</span><span class="token punctuation">;</span>
+	<span class="token keyword">int</span> n<span class="token punctuation">,</span> r<span class="token punctuation">;</span>                     <span class="token comment">//结点数和根的位置</span>
+<span class="token punctuation">}</span>CTree<span class="token punctuation">;</span>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3 id="增加一个结点-1" tabindex="-1"><a class="header-anchor" href="#增加一个结点-1" aria-hidden="true">#</a> 增加一个结点</h3>
+<p>新增元素，父结点后新增一个孩子结点，数组中加一个数组元素</p>
+<h3 id="删除一个结点-1" tabindex="-1"><a class="header-anchor" href="#删除一个结点-1" aria-hidden="true">#</a> 删除一个结点</h3>
+<p>父结点后的链表中将此结点删除</p>
+<p>数组中：
+①若此结点后无链表，则直接删除
+②若此结点后有链表，再处理子树</p>
+<h3 id="查找一个结点-1" tabindex="-1"><a class="header-anchor" href="#查找一个结点-1" aria-hidden="true">#</a> 查找一个结点</h3>
+<p>按图一行一行遍历</p>
+<p>找孩子结点方便，找父结点不方便</p>
+<h2 id="_4-4-3-孩子兄弟表示法-顺序-链式存储" tabindex="-1"><a class="header-anchor" href="#_4-4-3-孩子兄弟表示法-顺序-链式存储" aria-hidden="true">#</a> 4.4.3 孩子兄弟表示法（顺序+链式存储）</h2>
+<figure><img src="/images/datastruct/453_cc517c2353eb55fee933453aec89c3d5.png" alt="" tabindex="0" loading="lazy"><figcaption></figcaption></figure>
+<p>孩子兄弟表示法：用<code v-pre>二叉链表</code>存储<code v-pre>树</code>——<code v-pre>两个指针</code>：<code v-pre>第一个孩子</code>和<code v-pre>右兄弟</code></p>
+<p>用此方法存储的树，形态上和<code v-pre>二叉树</code>类似</p>
+<h3 id="类型描述-2" tabindex="-1"><a class="header-anchor" href="#类型描述-2" aria-hidden="true">#</a> 类型描述</h3>
+<p>由二叉树的链式存储（二叉链表）改变而来</p>
+<div class="language-c line-numbers-mode" data-ext="c"><pre v-pre class="language-c"><code><span class="token keyword">typedef</span> <span class="token keyword">struct</span> <span class="token class-name">CSNode</span><span class="token punctuation">{</span>
+	Elemtype data<span class="token punctuation">;</span>                   <span class="token comment">//数据域</span>
+	<span class="token keyword">struct</span> <span class="token class-name">CSTNode</span> <span class="token operator">*</span>firstchild<span class="token punctuation">,</span> <span class="token operator">*</span>nextsibling<span class="token punctuation">;</span> <span class="token comment">//第一个孩子和右兄弟指针</span>
+<span class="token punctuation">}</span>CSTNode<span class="token punctuation">,</span> <span class="token operator">*</span>CSTree<span class="token punctuation">;</span>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3 id="应用-树和二叉树的转换" tabindex="-1"><a class="header-anchor" href="#应用-树和二叉树的转换" aria-hidden="true">#</a> 应用：树和二叉树的转换</h3>
+<figure><img src="/images/datastruct/1637759667705.png" alt="1637759667705" tabindex="0" loading="lazy"><figcaption>1637759667705</figcaption></figure>
+<h2 id="_4-4-4-森林和二叉树的转换" tabindex="-1"><a class="header-anchor" href="#_4-4-4-森林和二叉树的转换" aria-hidden="true">#</a> 4.4.4 森林和二叉树的转换</h2>
+<p>本质：用<code v-pre>二叉链表</code>存储<code v-pre>森林</code></p>
+<p>将森林的根结点连起来，视为兄弟关系</p>
+<figure><img src="/images/datastruct/1637759667694.png" alt="1637759667694" tabindex="0" loading="lazy"><figcaption>1637759667694</figcaption></figure>
+<figure><img src="/images/datastruct/1637759667683.jpg" alt="1637759667683" tabindex="0" loading="lazy"><figcaption>1637759667683</figcaption></figure>
+</div></template>
+
+
